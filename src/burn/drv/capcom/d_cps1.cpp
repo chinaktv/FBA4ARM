@@ -14406,6 +14406,7 @@ static const struct GameConfig ConfigTable[] =
 	{ "dinoxa"       , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
 	{ "dino2011ws"   , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
 	{ "dinoxc"       , CPS_B_21_DEF, mapper_CD63B , 0, NULL                },
+	{ "dino2011ws2"  , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
 
 	{ 0             , 0           , 0            , 0, 0                   }
 };
@@ -22434,9 +22435,9 @@ struct BurnDriverX BurnDrvCpsSfzhch = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// FBA4DROID 三国志2 达人版	Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190221)
+// FBA4DROID 三国志2 达人版	Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190415)
 static struct BurnRomInfo WofdrRomDesc[] = {
-	{ "wofjdr.bin",    0x200000, 0xc7b9345e, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "wofjdr.bin",    0x200000, 0x8cdfb6f5, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
 	{ "tk2_01.3a",     0x080000, 0x0d9cb9bf, BRF_GRA | CPS1_TILES },
 	{ "tk2_02.4a",     0x080000, 0x45227027, BRF_GRA | CPS1_TILES },
@@ -22473,7 +22474,7 @@ STD_ROM_FN(Wofdr)
 
 struct BurnDriver BurnDrvCpsWofdr = {
 	"wofdr", "wof", NULL, NULL, "2019",
-	"Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190221)\0", NULL, "BinDi", "CPS1 / QSound",
+	"Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190415)\0", NULL, "BinDi", "CPS1 / QSound",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
 	NULL, WofdrRomInfo, WofdrRomName, NULL, NULL, NULL, NULL, WofInputInfo, WofDIPInfo,
@@ -22618,9 +22619,9 @@ struct BurnDriver BurnDrvCpsCaptcommpjy = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 名将 99打手版	Captain Commando (99 Beater Version 20190102)
+// FBA4DRIOD 名将 99打手版	Captain Commando (99 Beater Version 20190415)
 static struct BurnRomInfo CaptcommrdsRomDesc[] = {
-	{ "mj.mj",    0x302532, 0x7ad37dcb, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP }, //P ROM is a little larger than 3MB. Nasty protection!
+	{ "mj.mj",    0x302532, 0x09cf027a, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP }, //P ROM is a little larger than 3MB. Nasty protection!
 
 	{ "cc-5m.3a",      0x080000, 0x7261d8ba, BRF_GRA | CPS1_TILES },
 	{ "cc-7m.5a",      0x080000, 0x6a60f949, BRF_GRA | CPS1_TILES },
@@ -22635,14 +22636,6 @@ static struct BurnRomInfo CaptcommrdsRomDesc[] = {
 
 	{ "cc_18.11c",     0x020000, 0x6de2c2db, BRF_SND | CPS1_OKIM6295_SAMPLES },
 	{ "cc_19.12c",     0x020000, 0xb99091ae, BRF_SND | CPS1_OKIM6295_SAMPLES },
-	
-	A_BOARD_PLDS
-	
-	{ "cc63b.1a",      0x000117, 0xcae8f0f9, BRF_OPT },
-	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
-	{ "ccprg.11d",     0x000117, 0xe1c225c4, BRF_OPT },
-	{ "ioc1.ic7",      0x000104, 0xa399772d, BRF_OPT },	
-	{ "c632.ic1",      0x000117, 0x0fbd9270, BRF_OPT },
 };
 
 STD_ROM_PICK(Captcommrds)
@@ -22650,7 +22643,7 @@ STD_ROM_FN(Captcommrds)
 
 struct BurnDriver BurnDrvCpsCaptcommrds = {
 	"captcommrds", "captcomm", NULL, NULL, "2019",
-	"Captain Commando (99 Beater Version 20190102)\0", NULL, "BinDi", "CPS1",
+	"Captain Commando (99 Beater Version 20190415)\0", NULL, "BinDi", "CPS1",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 4, HARDWARE_CAPCOM_CPS1, GBF_SCRFIGHT, 0,
 	NULL, CaptcommrdsRomInfo, CaptcommrdsRomName, NULL, NULL, NULL, NULL, CaptcommInputInfo, CaptcommDIPInfo,
@@ -22698,9 +22691,9 @@ struct BurnDriver BurnDrvCpsCaptcommr1bs = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 名将 战神版	Captain Commando (Warlord Version 20190107)
+// FBA4DROID 名将 战神版	Captain Commando (Warlord Version 20190415)
 static struct BurnRomInfo CaptcommpzsRomDesc[] = {
-	{ "mj.mj",    0x302532, 0x9c6b0773, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP }, //P ROM is a little larger than 3MB. Nasty protection!
+	{ "mj.mj",    0x302532, 0xe00ed989, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP }, //P ROM is a little larger than 3MB. Nasty protection!
 
 	{ "cc-5m.3a",      0x080000, 0x7261d8ba, BRF_GRA | CPS1_TILES },
 	{ "cc-7m.5a",      0x080000, 0x6a60f949, BRF_GRA | CPS1_TILES },
@@ -22715,14 +22708,6 @@ static struct BurnRomInfo CaptcommpzsRomDesc[] = {
 
 	{ "cc_18.11c",     0x020000, 0x6de2c2db, BRF_SND | CPS1_OKIM6295_SAMPLES },
 	{ "cc_19.12c",     0x020000, 0xb99091ae, BRF_SND | CPS1_OKIM6295_SAMPLES },
-	
-	A_BOARD_PLDS
-	
-	{ "cc63b.1a",      0x000117, 0xcae8f0f9, BRF_OPT },
-	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
-	{ "ccprg.11d",     0x000117, 0xe1c225c4, BRF_OPT },
-	{ "ioc1.ic7",      0x000104, 0xa399772d, BRF_OPT },	
-	{ "c632.ic1",      0x000117, 0x0fbd9270, BRF_OPT },
 };
 
 STD_ROM_PICK(Captcommpzs)
@@ -22730,7 +22715,7 @@ STD_ROM_FN(Captcommpzs)
 
 struct BurnDriver BurnDrvCpsCaptcommpzs = {
 	"captcommpzs", "captcomm", NULL, NULL, "2019",
-	"Captain Commando (Warlord Version 20190107)\0", NULL, "TouJingGaiErDeZei", "CPS1",
+	"Captain Commando (Warlord Version 20190415)\0", NULL, "hack", "CPS1",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 4, HARDWARE_CAPCOM_CPS1, GBF_SCRFIGHT, 0,
 	NULL, CaptcommpzsRomInfo, CaptcommpzsRomName, NULL, NULL, NULL, NULL, CaptcommInputInfo, CaptcommDIPInfo,
@@ -22738,9 +22723,9 @@ struct BurnDriver BurnDrvCpsCaptcommpzs = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 名将 无限子弹版	Captain Commando (Infinite Bullet 20190121)
+// FBA4DROID 名将 无限子弹版	Captain Commando (Infinite Bullet 20190415)
 static struct BurnRomInfo CaptcommpwxRomDesc[] = {
-	{ "mj.mj",    0x302532, 0x9d863e1d, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },  //P ROM is a little larger than 3MB. Nasty protection!
+	{ "mj.mj",    0x302532, 0x5380d1a5, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },  //P ROM is a little larger than 3MB. Nasty protection!
 
 	{ "cc-5m.3a",      0x080000, 0x7261d8ba, BRF_GRA | CPS1_TILES },
 	{ "cc-7m.5a",      0x080000, 0x6a60f949, BRF_GRA | CPS1_TILES },
@@ -22755,14 +22740,6 @@ static struct BurnRomInfo CaptcommpwxRomDesc[] = {
 
 	{ "cc_18.11c",     0x020000, 0x6de2c2db, BRF_SND | CPS1_OKIM6295_SAMPLES },
 	{ "cc_19.12c",     0x020000, 0xb99091ae, BRF_SND | CPS1_OKIM6295_SAMPLES },
-	
-	A_BOARD_PLDS
-	
-	{ "cc63b.1a",      0x000117, 0xcae8f0f9, BRF_OPT },
-	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
-	{ "ccprg.11d",     0x000117, 0xe1c225c4, BRF_OPT },
-	{ "ioc1.ic7",      0x000104, 0xa399772d, BRF_OPT },	
-	{ "c632.ic1",      0x000117, 0x0fbd9270, BRF_OPT },
 };
 
 STD_ROM_PICK(Captcommpwx)
@@ -22770,7 +22747,7 @@ STD_ROM_FN(Captcommpwx)
 
 struct BurnDriver BurnDrvCpsCaptcommpwx = {
 	"captcommpwx", "captcomm", NULL, NULL, "2019",
-	"Captain Commando (Infinite Bullet 20190121)\0", NULL, "TouJingGaiErDeZei", "CPS1",
+	"Captain Commando (Infinite Bullet 20190415)\0", NULL, "hack", "CPS1",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 4, HARDWARE_CAPCOM_CPS1, GBF_SCRFIGHT, 0,
 	NULL, CaptcommpwxRomInfo, CaptcommpwxRomName, NULL, NULL, NULL, NULL, CaptcommInputInfo, CaptcommDIPInfo,
@@ -22897,11 +22874,11 @@ struct BurnDriver BurnDrvCpsDinows2019 = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 恐龙快打 战神版【原血战版】	Cadillacs & Dinosaurs (Warlord Version 20190119)
+// FBA4DROID 恐龙快打 战神版【原血战版】	Cadillacs & Dinosaurs (Warlord Version 20190415)
 static struct BurnRomInfo DinoxzbRomDesc[] = {
-	{ "23.rom",    0x080000, 0x90710d71, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
-	{ "22.rom",    0x080000, 0x3239cca6, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
-	{ "21.rom",    0x080000, 0x1907c3a7, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "23.rom",    0x080000, 0xb159f3cb, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "22.rom",    0x080000, 0xafecd19e, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "21.rom",    0x080000, 0xd5c8db31, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
 	{ "cd-1m.3a",      0x080000, 0x8da4f917, BRF_GRA | CPS1_TILES },
 	{ "cd-3m.5a",      0x080000, 0x6c40f603, BRF_GRA | CPS1_TILES },
@@ -22918,17 +22895,6 @@ static struct BurnRomInfo DinoxzbRomDesc[] = {
 	{ "cd-q2.2k",      0x080000, 0x770f4c47, BRF_SND | CPS1_QSOUND_SAMPLES },
 	{ "cd-q3.3k",      0x080000, 0x2f273ffc, BRF_SND | CPS1_QSOUND_SAMPLES },
 	{ "cd-q4.4k",      0x080000, 0x2c67821d, BRF_SND | CPS1_QSOUND_SAMPLES },
-	
-	A_BOARD_QSOUND_PLDS
-	
-	{ "cd63b.1a",      0x000117, 0xef72e902, BRF_OPT },	// b-board PLDs
-	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
-	{ "bprg1.11d",     0x000117, 0x31793da7, BRF_OPT },
-	{ "ioc1.ic1",      0x000104, 0xa399772d, BRF_OPT },	// c-board PLDs
-	{ "d7l1.7l",       0x000117, 0x27b7410d, BRF_OPT },	// d-board PLDs
-	{ "d8l1.8l",       0x000117, 0x539fc7da, BRF_OPT },
-	{ "d9k2.9k",       0x000117, 0xcd85a156, BRF_OPT },
-	{ "d10f1.10f",     0x000117, 0x6619c494, BRF_OPT },
 };
 
 STD_ROM_PICK(Dinoxzb)
@@ -22936,7 +22902,7 @@ STD_ROM_FN(Dinoxzb)
 
 struct BurnDriver BurnDrvCpsDinoxzb = {
 	"dinoxzb", "dino", NULL, NULL, "2019",
-	"Cadillacs & Dinosaurs (Warlord Version 20190119)\0", NULL, "BinDi", "CPS1 / QSound",
+	"Cadillacs & Dinosaurs (Warlord Version 20190415)\0", NULL, "BinDi", "CPS1 / QSound",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
 	NULL, DinoxzbRomInfo, DinoxzbRomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
@@ -22944,9 +22910,11 @@ struct BurnDriver BurnDrvCpsDinoxzb = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 恐龙快打 竞技版【原杜瓦版】	Cadillacs & Dinosaurs (Arena Version 20190123)
+// FBA4DROID 恐龙快打 竞技版【原杜瓦版】	Cadillacs & Dinosaurs (Arena Version 20190415)
 static struct BurnRomInfo DinojpsRomDesc[] = {
-	{ "kl.ww",    0x400000, 0x4b4d2f30, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "23.rom",    0x080000, 0x7e3d3151, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "22.rom",    0x080000, 0xfab740a9, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "21.rom",    0x080000, 0x84cfc5df, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
 	{ "cd-1m.3a",      0x080000, 0x8da4f917, BRF_GRA | CPS1_TILES },
 	{ "cd-3m.5a",      0x080000, 0x6c40f603, BRF_GRA | CPS1_TILES },
@@ -22981,7 +22949,7 @@ STD_ROM_FN(Dinojps)
 
 struct BurnDriver BurnDrvCpsDinojps = {
 	"dinojps", "dino", NULL, NULL, "2019",
-	"Cadillacs & Dinosaurs (Arena Version 20190123)\0", NULL, "BinDi", "CPS1 / QSound",
+	"Cadillacs & Dinosaurs (Arena Version 20190415)\0", NULL, "BinDi", "CPS1 / QSound",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
 	NULL, DinojpsRomInfo, DinojpsRomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
@@ -22989,9 +22957,12 @@ struct BurnDriver BurnDrvCpsDinojps = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 恐龙快打 天王版	Cadillacs & Dinosaurs (Sky King 20190114)
+// FBA4DROID 恐龙快打 天王版	Cadillacs & Dinosaurs (Sky King 20190415)
 static struct BurnRomInfo DinowtwRomDesc[] = {
-	{ "kl.ww",    0x400000, 0xfcd50c77, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "23.rom",    0x080000, 0x5d18372b, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "22.rom",    0x080000, 0xbb14d2e8, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "21.rom",    0x080000, 0x18dd8061, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "20.rom",    0x080000, 0xa2e1e4f3, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
 	{ "cd-1m.3a",      0x080000, 0x8da4f917, BRF_GRA | CPS1_TILES },
 	{ "cd-3m.5a",      0x080000, 0x6c40f603, BRF_GRA | CPS1_TILES },
@@ -23008,17 +22979,6 @@ static struct BurnRomInfo DinowtwRomDesc[] = {
 	{ "cd-q2.2k",      0x080000, 0x770f4c47, BRF_SND | CPS1_QSOUND_SAMPLES },
 	{ "cd-q3.3k",      0x080000, 0x2f273ffc, BRF_SND | CPS1_QSOUND_SAMPLES },
 	{ "cd-q4.4k",      0x080000, 0x2c67821d, BRF_SND | CPS1_QSOUND_SAMPLES },
-	
-	A_BOARD_QSOUND_PLDS
-	
-	{ "cd63b.1a",      0x000117, 0xef72e902, BRF_OPT },	// b-board PLDs
-	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
-	{ "bprg1.11d",     0x000117, 0x31793da7, BRF_OPT },
-	{ "ioc1.ic1",      0x000104, 0xa399772d, BRF_OPT },	// c-board PLDs
-	{ "d7l1.7l",       0x000117, 0x27b7410d, BRF_OPT },	// d-board PLDs
-	{ "d8l1.8l",       0x000117, 0x539fc7da, BRF_OPT },
-	{ "d9k2.9k",       0x000117, 0xcd85a156, BRF_OPT },
-	{ "d10f1.10f",     0x000117, 0x6619c494, BRF_OPT },
 };
 
 STD_ROM_PICK(Dinowtw)
@@ -23026,7 +22986,7 @@ STD_ROM_FN(Dinowtw)
 
 struct BurnDriver BurnDrvCpsDinowtw = {
 	"dinowtw", "dino", NULL, NULL, "2019",
-	"Cadillacs & Dinosaurs (Sky King 20190114)\0", NULL, "NanGongSheng", "CPS1 / QSound",
+	"Cadillacs & Dinosaurs (Sky King 20190415)\0", NULL, "hack", "CPS1 / QSound",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
 	NULL, DinowtwRomInfo, DinowtwRomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
@@ -23079,9 +23039,9 @@ struct BurnDriver BurnDrvCpsDinowj = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 恐龙快打 斗神版	Cadillacs & Dinosaurs (Fighting God Version 20190114)
+// FBA4DROID 恐龙快打 斗神版	Cadillacs & Dinosaurs (Fighting God Version 20190415)
 static struct BurnRomInfo DinojdsRomDesc[] = {
-	{ "kljds.shr",    0x200000, 0x38da2130, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "cde.bin",    0x200000, 0x932c96a3, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
 	{ "cd-1m.3a",      0x080000, 0x8da4f917, BRF_GRA | CPS1_TILES },
 	{ "cd-3m.5a",      0x080000, 0x6c40f603, BRF_GRA | CPS1_TILES },
@@ -23098,17 +23058,6 @@ static struct BurnRomInfo DinojdsRomDesc[] = {
 	{ "cd-q2.2k",      0x080000, 0x770f4c47, BRF_SND | CPS1_QSOUND_SAMPLES },
 	{ "cd-q3.3k",      0x080000, 0x2f273ffc, BRF_SND | CPS1_QSOUND_SAMPLES },
 	{ "cd-q4.4k",      0x080000, 0x2c67821d, BRF_SND | CPS1_QSOUND_SAMPLES },
-	
-	A_BOARD_QSOUND_PLDS
-	
-	{ "cd63b.1a",      0x000117, 0xef72e902, BRF_OPT },	// b-board PLDs
-	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
-	{ "bprg1.11d",     0x000117, 0x31793da7, BRF_OPT },
-	{ "ioc1.ic1",      0x000104, 0xa399772d, BRF_OPT },	// c-board PLDs
-	{ "d7l1.7l",       0x000117, 0x27b7410d, BRF_OPT },	// d-board PLDs
-	{ "d8l1.8l",       0x000117, 0x539fc7da, BRF_OPT },
-	{ "d9k2.9k",       0x000117, 0xcd85a156, BRF_OPT },
-	{ "d10f1.10f",     0x000117, 0x6619c494, BRF_OPT },
 };
 
 STD_ROM_PICK(Dinojds)
@@ -23116,7 +23065,7 @@ STD_ROM_FN(Dinojds)
 
 struct BurnDriver BurnDrvCpsDinojds = {
 	"dinojds", "dino", NULL, NULL, "2019",
-	"Cadillacs & Dinosaurs (Fighting God Version 20190114)\0", NULL, "NanGongSheng", "CPS1 / QSound",
+	"Cadillacs & Dinosaurs (Fighting God Version 20190415)\0", NULL, "hack", "CPS1 / QSound",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
 	NULL, DinojdsRomInfo, DinojdsRomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
@@ -23650,9 +23599,11 @@ struct BurnDriver BurnDrvCpsdinoplus = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 恐龙快打 勇士版 Cadillacs & Dinosaurs (Warriors 20181221)
+// FBA4DROID 恐龙快打 勇士版 Cadillacs & Dinosaurs (Warriors 20190415)
 static struct BurnRomInfo dinoyzRomDesc[] = {
-	{ "kl.ww",    0x400000, 0xbd5ee2c7, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "cde_23a.8f",    0x080000, 0x0482c0fd, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "cde_22a.7f",    0x080000, 0xe29e8297, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "cde_21a.6f",    0x080000, 0x39f122c6, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
 	{ "cd-1m.3a",      0x080000, 0x8da4f917, BRF_GRA | CPS1_TILES },
 	{ "cd-3m.5a",      0x080000, 0x6c40f603, BRF_GRA | CPS1_TILES },
@@ -23676,8 +23627,8 @@ STD_ROM_PICK(dinoyz)
 STD_ROM_FN(dinoyz)
 
 struct BurnDriver BurnDrvCpsdinoyz = {
-	"dinoyz", "dino", NULL, NULL, "2018",
-	"Cadillacs & Dinosaurs (Warriors 20181221)\0", NULL, "hack", "CPS1 / QSound",
+	"dinoyz", "dino", NULL, NULL, "2019",
+	"Cadillacs & Dinosaurs (Warriors 20190415)\0", NULL, "hack", "CPS1 / QSound",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
 	NULL, dinoyzRomInfo, dinoyzRomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
@@ -24289,8 +24240,7 @@ struct BurnDriver BurnDrvCpsdinoxc = {
 };
 */
 
-// FBA4DROID 恐龙新世纪 2011 无双版 第1套 Cadillacs & Dinosaurs (Unrivalled Version 2011 Set 1 20180213)
-// 恐龙新世纪2011无双最终破解版
+// FBA4DROID 恐龙新世纪 2011 无双版 Cadillacs & Dinosaurs (Unrivalled Version 2011 20180213)
 static struct BurnRomInfo dino2011wsRomDesc[] = {
 	{ "cde_23a.8f",    0x080000, 0xf4193752, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 	{ "cde_22a.7f",    0x080000, 0xfd2d3d51, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
@@ -24318,10 +24268,44 @@ STD_ROM_FN(dino2011ws)
 
 struct BurnDriver BurnDrvCpsdino2011ws = {
 	"dino2011ws", "dino", NULL, NULL, "2017",
-	"Cadillacs & Dinosaurs (Unrivalled Version 2011 Set 1 20180213)\0", NULL, "hack", "CPS1 / QSound",
+	"Cadillacs & Dinosaurs (Unrivalled Version 2011 20180213)\0", NULL, "hack", "CPS1 / QSound",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
 	NULL, dino2011wsRomInfo, dino2011wsRomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// FBA4DROID 恐龙新世纪 2011 无双版 2019 Cadillacs & Dinosaurs (Unrivalled 2011 Version 2019 20190415)
+static struct BurnRomInfo dino2011ws2RomDesc[] = {
+	{ "cde.bin",       0x180000, 0x544803d8, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "cd-1m.3a",      0x080000, 0x8da4f917, BRF_GRA | CPS1_TILES },
+	{ "cd-3m.5a",      0x080000, 0x6c40f603, BRF_GRA | CPS1_TILES },
+	{ "cd-2m.4a",      0x080000, 0x09c8fc2d, BRF_GRA | CPS1_TILES },
+	{ "cd-4m.6a",      0x080000, 0x637ff38f, BRF_GRA | CPS1_TILES },
+	{ "cd-5m.7a",      0x080000, 0x470befee, BRF_GRA | CPS1_TILES },
+	{ "cd-7m.9a",      0x080000, 0x22bfb7a3, BRF_GRA | CPS1_TILES },
+	{ "cd-6m.8a",      0x080000, 0xe7599ac4, BRF_GRA | CPS1_TILES },
+	{ "cd-8m.10a",     0x080000, 0x211b4b15, BRF_GRA | CPS1_TILES },
+
+	{ "cd_q.5k",       0x020000, 0x605fdb0b, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "cd-q1.1k",      0x080000, 0x60927775, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q2.2k",      0x080000, 0x770f4c47, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q3.3k",      0x080000, 0x2f273ffc, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q4.4k",      0x080000, 0x2c67821d, BRF_SND | CPS1_QSOUND_SAMPLES },
+};
+
+STD_ROM_PICK(dino2011ws2)
+STD_ROM_FN(dino2011ws2)
+
+struct BurnDriver BurnDrvCpsdino2011ws2 = {
+	"dino2011ws2", "dino", NULL, NULL, "2019",
+	"Cadillacs & Dinosaurs (Unrivalled 2011 Version 2019 20190415)\0", NULL, "hack", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, dino2011ws2RomInfo, dino2011ws2RomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
 	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };

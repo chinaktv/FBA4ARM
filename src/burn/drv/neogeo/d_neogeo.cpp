@@ -17534,21 +17534,19 @@ struct BurnDriver BurnDrvkof10thd = {
 	0x1000,	304, 224, 4, 3
 };
 
-// GOTVG 拳皇97 天国神族	The King of Fighters '97 (Heavenly Divine 20190224)
-// http://bbs.gotvg.com/thread-2551361-1-1.html
+// FBA4DROID 拳皇97 天国神族	The King of Fighters '97 (Heavenly Divine 20190325)
 static struct BurnRomInfo kof97orhRomDesc[] = {
-	{ "232or-p1.bin",    0x100000, 0x55f457f5, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
-	{ "232or-p2.bin",    0x400000, 0xc7d74423, 1 | BRF_ESS | BRF_PRG }, //  1 
+	{ "232or-p1.bin",    0x100000, 0xa7e3ba54, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "232or-p2.bin",    0x400000, 0xdedf9c80, 1 | BRF_ESS | BRF_PRG }, //  1 
 
-	//{ "KOF97_S1.ROM",    0x020000, 0x8514ecf5, 2 | BRF_GRA },           //  2 Text layer tiles
-	{ "232-s1.bin",    0x020000, 0xe338d57f, 2 | BRF_GRA },           //  Another newer S1 ROM file which was provided by hacker.
+	{ "232-s1.bin",    0x020000, 0xe338d57f, 2 | BRF_GRA },           //  S1 ROM
 
 	{ "232-c1.bin",    0x800000, 0x93415994, 3 | BRF_GRA },           //  3 Sprite data
 	{ "232-c2.bin",    0x800000, 0x65b3b5b0, 3 | BRF_GRA },           //  4 
 	{ "232-c3.c3",     0x800000, 0x581d6618, 3 | BRF_GRA },           //  5 
 	{ "232-c4.c4",     0x800000, 0x49bb1e68, 3 | BRF_GRA },           //  6 
-	{ "232-c5.bin",    0x800000, 0x46fc8247, 3 | BRF_GRA },           //  7 
-	{ "232-c6.bin",    0x800000, 0x0d39f4a8, 3 | BRF_GRA },           //  8 
+	{ "232-c5.bin",    0x800000, 0x391c14d3, 3 | BRF_GRA },           //  7 
+	{ "232-c6.bin",    0x800000, 0xba28c1b4, 3 | BRF_GRA },           //  8 
 
 	{ "232-m1.m1",    0x020000, 0x45348747, 4 | BRF_ESS | BRF_PRG }, //  9 Z80 code
 
@@ -17562,7 +17560,7 @@ STD_ROM_FN(kof97orh)
 
 struct BurnDriver BurnDrvKof97orh = {
 	"kof97orh", "kof97", "neogeo", NULL, "2019",
-	"The King of Fighters '97 (Heavenly Divine 20190224)\0", NULL, "ShenLeWanGuiJieMei", "Neo Geo MVS",
+	"The King of Fighters '97 (Heavenly Divine 20190325)\0", NULL, "hack", "Neo Geo MVS",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
 	NULL, kof97orhRomInfo, kof97orhRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
@@ -19439,10 +19437,10 @@ struct BurnDriver BurnDrvmslug3nd = {
 	0x1000, 304, 224, 4, 3
 };
 
-// FBA4DROID 合金弹头3 敌兵重置版 Metal Slug 3 (Enemies Resetting Version 20190212)
+// FBA4DROID 合金弹头3 敌兵重置版 Metal Slug 3 (Enemies Resetting Version 20190218)
 static struct BurnRomInfo mslug3cRomDesc[] = {
 	{ "256-ph1.p1",   0x100000, 0x9c42ca85, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
-	{ "256-ph2.sp2",  0x400000, 0x70129d90, 1 | BRF_ESS | BRF_PRG }, //  1 Only this one was hacked.
+	{ "256-ph2.sp2",  0x400000, 0x9e2064e6, 1 | BRF_ESS | BRF_PRG }, //  1 Only this one was hacked.
 
 	{ "ms3n_s1.rom",    0x020000, 0x8458fff9, 2 | BRF_GRA },
 
@@ -19468,7 +19466,7 @@ STD_ROM_FN(mslug3c)
 
 struct BurnDriver BurnDrvmslug3c = {
 	"mslug3c", "mslug3nd", "neogeo", NULL, "2019",
-	"Metal Slug 3 (Enemies Resetting Version 20190212)\0", NULL, "hack", "Neo Geo MVS",
+	"Metal Slug 3 (Enemies Resetting Version 20190218)\0", NULL, "hack", "Neo Geo MVS",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_RUNGUN, FBF_MSLUG,
 	NULL, mslug3cRomInfo, mslug3cRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
@@ -19705,10 +19703,9 @@ struct BurnDriver BurnDrvmslug3v2 = {
 	0x1000, 304, 224, 4, 3
 };
 
-// FBA4DROID 合金弹头3 坐骑版 Metal Slug 3 (Mount Version 20180510)
-// mslug3h52 in HBMAME.
+// FBA4DROID 合金弹头3 坐骑强化版 Metal Slug 3 (Enhanced Mount Version 20190404)
 static struct BurnRomInfo mslug3nzjRomDesc[] = {
-	{ "256-pg1.p1",  0x100000, 0xc85c345f, 1 | BRF_ESS | BRF_PRG }, //  0 68K code / Only this file is modified.
+	{ "256-pg1.p1",  0x100000, 0x9aa71333, 1 | BRF_ESS | BRF_PRG }, //  0 68K code / Only this file is modified.
 	{ "256-ph2.bin",  0x400000, 0x1f3d8ce8, 1 | BRF_ESS | BRF_PRG }, //  1
 
 	{ "ms3n_s1.rom",    0x020000, 0x8458fff9, 2 | BRF_GRA },
@@ -19734,8 +19731,8 @@ STDROMPICKEXT(mslug3nzj, mslug3nzj, neogeo)
 STD_ROM_FN(mslug3nzj)
 
 struct BurnDriver BurnDrvmslug3nzj = {
-	"mslug3nzj", "mslug3nd", "neogeo", NULL, "2018",
-	"Metal Slug 3 (Mount Version 20180510)\0", NULL, "hack", "Neo Geo MVS",
+	"mslug3nzj", "mslug3nd", "neogeo", NULL, "2019",
+	"Metal Slug 3 (Mount Version 20190404)\0", NULL, "hack", "Neo Geo MVS",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_RUNGUN, FBF_MSLUG,
 	NULL, mslug3nzjRomInfo, mslug3nzjRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
@@ -19856,7 +19853,7 @@ struct BurnDriver BurnDrvmslug4d = {
 
 // FBA4DROID 20190211 合金弹头4 敌兵重置版
 static struct BurnRomInfo mslug4drRomDesc[] = {
-	{ "263-p1.bin",   0x100000, 0x4ae77816, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "263-p1.bin",   0x100000, 0xc2376c7c, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
 	{ "263-p2.bin",   0x400000, 0xfdb7aed8, 1 | BRF_ESS | BRF_PRG }, //  1 
 
 	{ "263.s1",    0x020000, 0xa9446774, 2 | BRF_GRA },
@@ -19881,7 +19878,7 @@ STD_ROM_FN(mslug4dr)
 
 struct BurnDriver BurnDrvmslug4dr = {
 	"mslug4dr", "mslug4d", "neogeo", NULL, "2019",
-	"Metal Slug 4 (Enemies Resetting Version 20190211)\0", NULL, "Mega", "Neo Geo MVS",
+	"Metal Slug 4 (Enemies Resetting Version 20190415)\0", NULL, "Mega", "Neo Geo MVS",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_RUNGUN, FBF_MSLUG,
 	NULL, mslug4drRomInfo, mslug4drRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
@@ -20128,4 +20125,77 @@ struct BurnDriver BurnDrvmslug3sd = {
 	NULL, mslug3sdRomInfo, mslug3sdRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
 	mslug3hInit, NeoSMAExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000, 304, 224, 4, 3
+};
+
+// FBA4DROID 合金弹头5 敌兵魔改版	Metal Slug 5 (Enemies Heavily Modified Version 20190307)
+static struct BurnRomInfo mslug5dmgRomDesc[] = {
+	{ "268d-p1.rom",    0x600000, 0x857f3676, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	
+	{ "268d-s1.rom",    0x020000, 0x64952683, 2 | BRF_GRA },
+
+	{ "268d-c1.rom",	0x800000, 0x969c0d62, 3 | BRF_GRA },           //  2 sprites
+	{ "268d-c2.rom",	0x800000, 0xc69ae867, 3 | BRF_GRA },           //  3
+	{ "268d-c3.rom",	0x800000, 0xd7beaeaf, 3 | BRF_GRA },           //  4
+	{ "268d-c4.rom",	0x800000, 0xe1b1131b, 3 | BRF_GRA },           //  5
+	{ "268d-c5.rom",	0x800000, 0x2fa1a5ad, 3 | BRF_GRA },           //  6
+	{ "268d-c6.rom",	0x800000, 0x6de89589, 3 | BRF_GRA },           //  7
+	{ "268d-c7.rom",	0x800000, 0x97bd0c0a, 3 | BRF_GRA },           //  8
+	{ "268d-c8.rom",	0x800000, 0xc0d5bc20, 3 | BRF_GRA },           //  9
+
+	{ "268d-m1.rom",    0x020000, 0x6fa01c9a, 4 | BRF_ESS | BRF_PRG }, // 10 Z80 code
+
+	{ "268d-v1.rom",	0x400000, 0xc3540e0d, 5 | BRF_SND },           // 11 ymsnd
+	{ "268d-v2.rom",	0x400000, 0x077bd2f4, 5 | BRF_SND },           // 12
+	{ "268d-v3.rom",	0x400000, 0x39b14567, 5 | BRF_SND },           // 13
+	{ "268d-v4.rom",	0x400000, 0x969ff3b2, 5 | BRF_SND },           // 14
+};
+
+STDROMPICKEXT(mslug5dmg, mslug5dmg, neogeo)
+STD_ROM_FN(mslug5dmg)
+
+struct BurnDriver BurnDrvmslug5dmg = {
+	"mslug5dmg", "mslug5d", "neogeo", NULL, "2019",
+	"Metal Slug 5 (Enemies Heavily Modified Version 20190307)\0", NULL, "hack", "Neo Geo MVS",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
+	NULL, mslug5dmgRomInfo, mslug5dmgRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000,	304, 224, 4, 3
+};
+
+// FBA4DROID 拳皇2002 天国神族 风云再起 游聚版 The King of Fighters 2002 (Heavenly Divine - Rerise Of Chaos 20100407)
+static struct BurnRomInfo kof2k2c2plsRomDesc[] = {
+	{ "Kof2k2C2_p1.rom",	0x100000, 0x811512bb, 1 | BRF_ESS | BRF_PRG }, // 1 68K code
+	{ "Kof2k2C2_p2.rom",	0x400000, 0x293bbf78, 1 | BRF_ESS | BRF_PRG },
+
+	{ "Kof2k2C2_s1.rom",	0x020000, 0x67e7cbe1, 2 | BRF_GRA },           // 2 Text layer tiles / TC531000
+
+	{ "kf2k2_c1.rom",	0x800000, 0x7efa6ef7, 3 | BRF_GRA },          
+	{ "kf2k2_c2.rom",	0x800000, 0xaa82948b, 3 | BRF_GRA },          
+	{ "kf2k2_c3.rom",	0x800000, 0x959fad0b, 3 | BRF_GRA },           
+	{ "Kof2k2C2_c4.rom",	0x800000, 0x2558972f, 3 | BRF_GRA },          
+	{ "kf2k2_c5.rom",	0x800000, 0x74bba7c6, 3 | BRF_GRA },          
+	{ "kf2k2_c6.rom",	0x800000, 0xe20d2216, 3 | BRF_GRA },          
+	{ "Kof2k2C2_c7.rom",	0x800000, 0x201e75e0, 3 | BRF_GRA },           
+	{ "Kof2k2C2_c8.rom",	0x800000, 0xff0fd53b, 3 | BRF_GRA },           
+
+	{ "265-m1.rom",  0x020000, 0x1c661a4b, 4 | BRF_ESS | BRF_PRG }, 
+
+	{ "kof2K2_V1.rom",  0x400000, 0x13d98607, 5 | BRF_SND },
+	{ "kof2K2_V2.rom",  0x400000, 0x9cf74677, 5 | BRF_SND },
+	{ "kof2K2_V3.rom",  0x400000, 0x8e9448b5, 5 | BRF_SND },
+	{ "kof2K2_V4.rom",  0x400000, 0x067271b5, 5 | BRF_SND },
+};
+
+STDROMPICKEXT(kof2k2c2pls, kof2k2c2pls, neogeo)
+STD_ROM_FN(kof2k2c2pls)
+
+struct BurnDriver BurnDrvkof2k2c2pls = {
+	"kof2k2c2pls", "kof2002", "neogeo", NULL, "2010",
+	"The King of Fighters 2002 (Heavenly Divine - Rerise Of Chaos 20100407)\0", NULL, "hack", "Miscellaneous",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
+	NULL, kof2k2c2plsRomInfo, kof2k2c2plsRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000,	304, 224, 4, 3
 };

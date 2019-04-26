@@ -3628,3 +3628,36 @@ struct BurnDriver BurnDrvgrdianssy = {
 	grdiansInit, grdiansExit, grdiansFrame, DrvDraw, grdiansScan, &bRecalcPalette, 0x8000,
 	304, 232, 4, 3
 };
+
+// FBA4DROID 电神魔傀II 无双版 Denjin Makai II (Unrivalled Edition 20190211)
+static struct BurnRomInfo grdiansyRomDesc[] = {
+	{ "u2.bin",		  0x080000, 0x8F0CCF93, BRF_ESS | BRF_PRG },	// 68000 code
+	{ "u3.bin",		  0x080000, 0x2AE2AC73, BRF_ESS | BRF_PRG },
+	{ "u4.bin",		  0x080000, 0xBB52447B, BRF_ESS | BRF_PRG },
+	{ "u5.bin",		  0x080000, 0x9c164a3b, BRF_ESS | BRF_PRG },
+
+	{ "u16.bin",	  0x400000, 0x6a65f265,	BRF_GRA },				// GFX
+	{ "u20.bin",	  0x400000, 0xa7226ab7,	BRF_GRA },
+	{ "u15.bin",	  0x400000, 0x01672dcd,	BRF_GRA },
+	{ "u19.bin",	  0x400000, 0xc0c998a0,	BRF_GRA },
+	{ "u18.bin",	  0x400000, 0x967babf4,	BRF_GRA },
+	{ "u22.bin",	  0x400000, 0x6239997a,	BRF_GRA },
+	{ "u17.bin",	  0x400000, 0x0fad0629,	BRF_GRA },
+	{ "u21.bin",	  0x400000, 0x6f95e466,	BRF_GRA },
+
+	{ "u32.bin",    0x100000, 0xcf0f3017, BRF_SND },				// PCM
+
+};
+
+STD_ROM_PICK(grdiansy)
+STD_ROM_FN(grdiansy)
+
+struct BurnDriver BurnDrvgrdiansy = {
+	"grdiansy", "grdians", NULL, NULL, "2019",
+	"Denjin Makai II (Unrivalled Edition 20190211)\0", "Imperfect graphics @ game start cutscene", "hack", "Newer Seta",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SETA2, GBF_SCRFIGHT, 0,
+	NULL, grdiansyRomInfo, grdiansyRomName, NULL, NULL, NULL, NULL, grdiansInputInfo, grdiansDIPInfo,
+	grdiansInit, grdiansExit, grdiansFrame, DrvDraw, grdiansScan, &bRecalcPalette, 0x8000,
+	304, 232, 4, 3
+};
