@@ -7457,6 +7457,39 @@ struct BurnDriver BurnDrvkovassga = {
 	448, 224, 4, 3
 };
 
+// EMUMAX 三国战记-乱世英雄2.8噩梦版 Knights of Valour - Luan Shi Ying Xiong 2.8 - Nightmare Edition 
+// Not working!
+static struct BurnRomInfo kovshpzRomDesc[] = {
+	{ "p0600h.rom",			0x400000, 0x00000000, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",    		0x800000, 0x00000000, 2 | BRF_GRA },			//  1 Tile data
+
+	{ "a0600.rom",	   		0x800000, 0x00000000, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",	   		0x800000, 0x00000000, 3 | BRF_GRA }, 	        //  3 
+	{ "a0602.rom",	   		0x800000, 0x00000000, 3 | BRF_GRA }, 	        //  4
+	{ "a0540.rom",	   		0x01000000, 0x00000000, 3 | BRF_GRA }, 	        //  5
+
+	{ "b0600.rom",	   		0x800000, 0x00000000, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0540.rom",	   		0x800000, 0x00000000, 4 | BRF_GRA },			//  7
+
+	{ "m0600.rom",	   		0x400000, 0x00000000, 5 | BRF_SND },			//  8 Samples
+
+	{ "kovsh_v100_china.asic", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS },  //  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovshpz, kovshpz, pgm)
+STD_ROM_FN(kovshpz)
+
+struct BurnDriver BurnDrvkovshpz = {
+	"kovshpz", "kovshp", "pgm", NULL, "2004",
+	"Knights of Valour - Luan Shi Ying Xiong 2.8 - Nightmare Edition\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
+	NULL, kovshpzRomInfo, kovshpzRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovshpInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
 //kov2p
 
 // FBA4DROID 三国战纪2p 苍天航路 Knights of Valour 2 Plus - Nine Dragons (Heaven Route 20190120)
@@ -7777,7 +7810,7 @@ struct BurnDriver BurnDrvkov2pfwly = {
 };
 
 // GOTVG 三国战纪2p 天火明名 Knights of Valour 2 Plus (Tian Huo Ming Ming 20190415)
-// Not working!
+// Partitially working!
 static struct BurnRomInfo kov2pmemmRomDesc[] = {
 	{ "v204-32m.dec",  		0x400000, 0x7f4b8e0b, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
@@ -7796,7 +7829,8 @@ static struct BurnRomInfo kov2pmemmRomDesc[] = {
 
 	{ "kov2p_igs027a_china.bin",	0x004000, 0x19a0bd95, 7 | BRF_PRG | BRF_ESS },  // 10 Internal ARM7 Rom
 
-	{ "v200-16.dec",		0x200000, 0x80e672d7, 8 | BRF_PRG | BRF_ESS },  // 11 External ARM7 Rom
+	//{ "v200-16.dec",		0x200000, 0x80e672d7, 8 | BRF_PRG | BRF_ESS },  // Not working! Replace with unmodified file to make it working!
+	{ "v200-16.rom",   		0x200000, 0x16a0c11f, 8 | BRF_PRG | BRF_ESS },  // 11 External ARM7 Rom 
 };
 
 STDROMPICKEXT(kov2pmemm, kov2pmemm, pgm)
