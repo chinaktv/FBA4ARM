@@ -20603,7 +20603,7 @@ struct BurnDriver BurnDrvmslug4nd = {
 	"mslug4nd", NULL, "neogeo", NULL, "2002",
 	"Metal Slug 4 (set 1, decrypted C)\0", NULL, "Mega / Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_M1, GBF_RUNGUN, FBF_MSLUG,
+	BDF_GAME_WORKING, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_M1, GBF_RUNGUN, FBF_MSLUG,
 	NULL, mslug4ndRomInfo, mslug4ndRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
 	mslug4Init, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000,	304, 224, 4, 3
@@ -20755,7 +20755,7 @@ struct BurnDriver BurnDrvrotdnd = {
 	"rotdnd", NULL, "neogeo", NULL, "2002",
 	"Rage of the Dragons (decrypted C)\0", NULL, "Evoga / Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, 0,
 	NULL, rotdndRomInfo, rotdndRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
 	rotdInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000,	320, 224, 4, 3
@@ -20784,5 +20784,110 @@ struct BurnDriver BurnDrvpnyaan = {
 	BDF_GAME_WORKING, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_M1, GBF_PUZZLE, 0,
 	NULL, pnyaanRomInfo, pnyaanRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
 	pnyaaInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000,	304, 224, 4, 3
+};
+
+// -----------------------------------------------------------------------------
+// Hacks From Pandora's Box
+
+// Double Dragon Plus(Neo-Geo)
+// 月光宝盒 双截龙 正宗加强版
+static struct BurnRomInfo doubledpRomDesc[] = {
+	{ "082p-p1.bin",    0x200000, 0xe57b72ef, 1 | BRF_ESS | BRF_PRG }, //  0 68K code			/ TC5316200
+
+	{ "082p-s1.bin",    0x020000, 0xe2a37aa9, 2 | BRF_GRA },           //  1 Text layer tiles / TC531000
+
+	{ "082-c1.c1",    0x200000, 0xb478c725, 3 | BRF_GRA },           //  2 Sprite data		/ TC5316200
+	{ "082-c2.c2",    0x200000, 0x2857da32, 3 | BRF_GRA },           //  3 					/ TC5316200
+	{ "082-c3.c3",    0x200000, 0x8b0d378e, 3 | BRF_GRA },           //  4 					/ TC5316200
+	{ "082-c4.c4",    0x200000, 0xc7d2f596, 3 | BRF_GRA },           //  5 					/ TC5316200
+	{ "082-c5.c5",    0x200000, 0xec87bff6, 3 | BRF_GRA },           //  6 					/ TC5316200
+	{ "082-c6.c6",    0x200000, 0x844a8a11, 3 | BRF_GRA },           //  7 					/ TC5316200
+	{ "082-c7.c7",    0x100000, 0x727c4d02, 3 | BRF_GRA },           //  8 					/ TC538200
+	{ "082-c8.c8",    0x100000, 0x69a5fa37, 3 | BRF_GRA },           //  9 					/ TC538200
+
+	{ "082-m1.m1",    0x020000, 0x10b144de, 4 | BRF_ESS | BRF_PRG }, // 10 Z80 code			/ TC531001
+
+	{ "082-v1.v1",    0x200000, 0xcc1128e4, 5 | BRF_SND },           // 11 Sound data		/ TC5316200
+	{ "082-v2.v2",    0x200000, 0xc3ff5554, 5 | BRF_SND },           // 12 					/ TC5316200
+};
+
+STDROMPICKEXT(doubledp, doubledp, neogeo)
+STD_ROM_FN(doubledp)
+
+struct BurnDriver BurnDrvdoubledp = {
+	"doubledp", "doubledr", "neogeo", NULL, "1995",
+	"Double Dragon Plus(Neo-Geo)\0", NULL, "hack", "Neo Geo MVS",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_SWAPP, GBF_VSFIGHT, 0,
+	NULL, doubledpRomInfo, doubledpRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000,	320, 224, 4, 3
+};
+
+// Far East of Eden - Kabuki Klash Boss Edition
+// 月光宝盒 天外魔境真传 BOSS版
+static struct BurnRomInfo kabukiehRomDesc[] = {
+	{ "092bossm-p1.bin",    0x200000, 0xdc1b9aae, 1 | BRF_ESS | BRF_PRG }, //  0 68K code 		/ mask rom TC5316200
+
+	{ "092-s1.s1",    0x020000, 0xa3d68ee2, 2 | BRF_GRA },           //  1 Text layer tiles / mask rom TC531000
+
+	{ "092-c1.c1",    0x400000, 0x2a9fab01, 3 | BRF_GRA },           //  2 Sprite data		/ mask rom TC5332205
+	{ "092-c2.c2",    0x400000, 0x6d2bac02, 3 | BRF_GRA },           //  3 					/ mask rom TC5332205
+	{ "092-c3.c3",    0x400000, 0x5da735d6, 3 | BRF_GRA },           //  4 					/ mask rom TC5332205
+	{ "092-c4.c4",    0x400000, 0xde07f997, 3 | BRF_GRA },           //  5 					/ mask rom TC5332205
+
+	{ "092-m1.m1",    0x020000, 0x91957ef6, 4 | BRF_ESS | BRF_PRG }, //  6 Z80 code			/ mask rom TC531001
+
+	{ "092-v1.v1",    0x200000, 0x69e90596, 5 | BRF_SND },           //  7 Sound data		/ mask rom TC5316200
+	{ "092-v2.v2",    0x200000, 0x7abdb75d, 5 | BRF_SND },           //  8 					/ mask rom TC5316200
+	{ "092-v3.v3",    0x200000, 0xeccc98d3, 5 | BRF_SND },           //  9 					/ mask rom TC5316200
+	{ "092-v4.v4",    0x100000, 0xa7c9c949, 5 | BRF_SND },           // 10 					/ mask rom TC538200
+};
+
+STDROMPICKEXT(kabukieh, kabukieh, neogeo)
+STD_ROM_FN(kabukieh)
+
+struct BurnDriver BurnDrvkabukieh = {
+	"kabukieh", "kabukikl", "neogeo", NULL, "1995",
+	"Far East of Eden - Kabuki Klash Boss Edition\0", NULL, "hack", "Neo Geo MVS",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_SWAPP, GBF_VSFIGHT, 0,
+	NULL, kabukiehRomInfo, kabukiehRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000,	320, 224, 4, 3
+};
+
+// The King of Fighters 2002 (Ice Blue)
+// 月光宝盒 拳皇2002 冰蓝
+static struct BurnRomInfo kf2k2iceRomDesc[] = {
+	{ "265-p1.bin",   0x100000, 0xb713becc, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "265-p2.bin",   0x400000, 0x6464fd60, 1 | BRF_ESS | BRF_PRG }, //  1
+
+	{ "kf2k2_c1.rom", 0x800000, 0x7efa6ef7, 3 | BRF_GRA },		 //  2 Sprite data
+	{ "kf2k2_c2.rom", 0x800000, 0xaa82948b, 3 | BRF_GRA },		 //  3
+	{ "kf2k2_c3.rom", 0x800000, 0x959fad0b, 3 | BRF_GRA },		 //  4
+	{ "kf2k2_c4.rom", 0x800000, 0xefe6a468, 3 | BRF_GRA },		 //  5
+	{ "kf2k2_c5.rom", 0x800000, 0x74bba7c6, 3 | BRF_GRA },		 //  6
+	{ "kf2k2_c6.rom", 0x800000, 0xe20d2216, 3 | BRF_GRA },		 //  7
+	{ "kf2k2_c7.rom", 0x800000, 0x8a5b561c, 3 | BRF_GRA },		 //  8
+	{ "kf2k2_c8.rom", 0x800000, 0xbef667a3, 3 | BRF_GRA },		 //  9
+
+	{ "265-m1.bin",   0x020000, 0x85aaa632, 4 | BRF_ESS | BRF_PRG }, // 10 Z80 code
+
+	{ "265-v1.bin",   0x800000, 0x15e8f3f5, 5 | BRF_SND },           // 11 Sound data
+	{ "265-v2.bin",   0x800000, 0xda41d6f9, 5 | BRF_SND },           // 12
+};
+
+STDROMPICKEXT(kf2k2ice, kf2k2ice, neogeo)
+STD_ROM_FN(kf2k2ice)
+
+struct BurnDriver BurnDrvkf2k2ice = {
+	"kf2k2ice", "kof2k2nd", "neogeo", NULL, "2002",
+	"The King of Fighters 2002 (Ice Blue)\0", NULL, "hack", "Neo Geo",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	NULL, kf2k2iceRomInfo, kf2k2iceRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000,	304, 224, 4, 3
 };
