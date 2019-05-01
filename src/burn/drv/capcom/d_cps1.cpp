@@ -14407,6 +14407,8 @@ static const struct GameConfig ConfigTable[] =
 	{ "dino2011ws"   , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
 	{ "dinoxc"       , CPS_B_21_DEF, mapper_CD63B , 0, NULL                },
 	{ "dino2011ws2"  , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
+	{ "wofjmv3"      , CPS_B_21_QS1, mapper_TK263B, 0, wof_decode          },
+	{ "wonder3up"    , CPS_B_21_BT1, mapper_RT24B , 0, NULL                },
 
 	{ 0             , 0           , 0            , 0, 0                   }
 };
@@ -24307,6 +24309,80 @@ struct BurnDriver BurnDrvCpsdino2011ws2 = {
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
 	NULL, dino2011ws2RomInfo, dino2011ws2RomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
 	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// FBA4DROID 三国志2 三美1V3版 Tenchi wo Kurau II - Sekiheki no Tatakai (Sanmei 1VS3 20190423)
+static struct BurnRomInfo wofjmv3RomDesc[] = {
+	{ "tk2j23c.bin",   0x080000, 0x6921fe75, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "tk2j22c.bin",   0x080000, 0x24bec4db, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "tk2_01.3a",     0x080000, 0x0d9cb9bf, BRF_GRA | CPS1_TILES },
+	{ "tk2_02.4a",     0x080000, 0x45227027, BRF_GRA | CPS1_TILES },
+	{ "tk2_03.5a",     0x080000, 0xc5ca2460, BRF_GRA | CPS1_TILES },
+	{ "tk2_04.6a",     0x080000, 0xe349551c, BRF_GRA | CPS1_TILES },
+	{ "tk2_05.7a",     0x080000, 0xe4a44d53, BRF_GRA | CPS1_TILES },
+	{ "tk2_06.8a",     0x080000, 0x58066ba8, BRF_GRA | CPS1_TILES },
+	{ "tk2_07.9a",     0x080000, 0xd706568e, BRF_GRA | CPS1_TILES },
+	{ "tk2_08.10a",    0x080000, 0xd4a19a02, BRF_GRA | CPS1_TILES },
+
+	{ "tk2_qa.5k",     0x020000, 0xc9183a0d, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "tk2-q1.1k",     0x080000, 0x611268cf, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "tk2-q2.2k",     0x080000, 0x20f55ca9, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "tk2-q3.3k",     0x080000, 0xbfcf6f52, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "tk2-q4.4k",     0x080000, 0x36642e88, BRF_SND | CPS1_QSOUND_SAMPLES },
+};
+
+STD_ROM_PICK(wofjmv3)
+STD_ROM_FN(wofjmv3)
+
+struct BurnDriver BurnDrvCpswofjmv3 = {
+	"wofjmv3", "wof", NULL, NULL, "2019",
+	"Tenchi wo Kurau II - Sekiheki no Tatakai (Sanmei 1VS3 20190423)\0", NULL, "hack", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, wofjmv3RomInfo, wofjmv3RomName, NULL, NULL, NULL, NULL, WofInputInfo, WofDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// FBA4DROID 3个奇迹 加强版 Three Wonders (Wonder 3 Plus 20190419)
+static struct BurnRomInfo wonder3upRomDesc[] = {
+	{ "rtu_30a.11f",   0x020000, 0x772b1217, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "rtu_35a.11h",   0x020000, 0xcac5db10, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "rtu_31a.12f",   0x020000, 0x32835e5e, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "rtu_36a.12h",   0x020000, 0xa0c32403, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "rt_28a.9f",     0x020000, 0x054137c8, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "rt_33a.9h",     0x020000, 0x7264cb1b, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "rtu_29a.10f",   0x020000, 0xcddaa919, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "rtu_34a.10h",   0x020000, 0xed52e7e5, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+
+	{ "rt-5m.7a",      0x080000, 0x86aef804, BRF_GRA | CPS1_TILES },
+	{ "rt-7m.9a",      0x080000, 0x4f057110, BRF_GRA | CPS1_TILES },
+	{ "rt-1m.3a",      0x080000, 0x902489d0, BRF_GRA | CPS1_TILES },
+	{ "rt-3m.5a",      0x080000, 0xe35ce720, BRF_GRA | CPS1_TILES },
+	{ "rt-6m.8a",      0x080000, 0x13cb0e7c, BRF_GRA | CPS1_TILES },
+	{ "rt-8m.10a",     0x080000, 0x1f055014, BRF_GRA | CPS1_TILES },
+	{ "rt-2m.4a",      0x080000, 0xe9a034f4, BRF_GRA | CPS1_TILES },
+	{ "rt-4m.6a",      0x080000, 0xdf0eea8b, BRF_GRA | CPS1_TILES },
+
+	{ "rt_9.12b",      0x010000, 0xabfca165, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "rt_18.11c",     0x020000, 0x26b211ab, BRF_SND | CPS1_OKIM6295_SAMPLES },
+	{ "rt_19.12c",     0x020000, 0xdbe64ad0, BRF_SND | CPS1_OKIM6295_SAMPLES },
+};
+
+STD_ROM_PICK(wonder3up)
+STD_ROM_FN(wonder3up)
+
+struct BurnDriver BurnDrvCpswonder3up = {
+	"wonder3up", "3wonders", NULL, NULL, "2019",
+	"Three Wonders (Wonder 3 Plus 20190419)\0", NULL, "hack", "CPS1",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 2, HARDWARE_CAPCOM_CPS1, GBF_MINIGAMES, 0,
+	NULL, wonder3upRomInfo, wonder3upRomName, NULL, NULL, NULL, NULL, ThreeWondersInputInfo, ThreeWondersDIPInfo,
+	DrvInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
