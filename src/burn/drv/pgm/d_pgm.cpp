@@ -7423,21 +7423,23 @@ struct BurnDriver BurnDrvkovytzyftxqt = {
 	448, 224, 4, 3
 };
 
-// FBA4DROID 三国战纪 乱世枭雄 枭雄天下 2019 Knights of Valour Super Heroes Plus (Ambitious Heroes Over The World 2019 20190501)
-// Not working!
+// FBA4DROID 三国战纪 乱世枭雄 枭雄天下 2019 Knights of Valour Super Heroes Plus ( Ambitious Heroes Over The World 2019 20190301)
 static struct BurnRomInfo kovshptxRomDesc[] = {
-	{ "m0601.rom",	0x200000, 0xc19862a3, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
-	{ "m0602.rom",	0x200000, 0xdbf88515, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+	{ "p0600h2019.rom",		0x400000, 0xc3579501, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
-	{ "t0600.rom",	0x800000, 0x9b0ec32f, 2 | BRF_GRA },			//  1 Tile data
+	{ "t0600.rom",    		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
 
-	{ "a0600x.rom",	0x2000000, 0x257f7a70, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0600.rom",	   		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",	   		0x800000, 0xff7a4373, 3 | BRF_GRA }, 	        //  3 
+	{ "a0602.rom",	   		0x800000, 0xe7a32959, 3 | BRF_GRA }, 	        //  4
+	{ "a0540.rom",	   		0x800000, 0xc68f3b54, 3 | BRF_GRA }, 	        //  5
 
-	{ "b0600x.rom",	0x1000000, 0xd5c4da25, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0600.rom",	   		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0540.rom",	   		0x800000, 0x664adc02, 4 | BRF_GRA },			//  7
 
-	{ "p0600h.rom",	0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  8 Samples
+	{ "m0600.rom",	   		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  8 Samples
 
-	{ "kovshp_v100_china.asic",	0x004000, 0x0f09a5c1, 7 | BRF_PRG | BRF_ESS },  //  9 Internal ARM7 Rom
+	{ "kovsh_v100_china.asic", 	0x004000, 0x0f09a5c1, 7 | BRF_PRG | BRF_ESS },  //  9 Internal ARM7 Rom
 };
 
 STDROMPICKEXT(kovshptx, kovshptx, pgm)
@@ -7445,7 +7447,7 @@ STD_ROM_FN(kovshptx)
 
 struct BurnDriver BurnDrvkovshptx = {
 	"kovshptx", "kovshp", "pgm", NULL, "2019",
-	"Knights of Valour Super Heroes Plus (Ambitious Heroes Over The World 2019 20190501)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
+	"Knights of Valour Super Heroes Plus ( Ambitious Heroes Over The World 2019 20190301)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
 	NULL, kovshptxRomInfo, kovshptxRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,

@@ -21285,7 +21285,7 @@ struct BurnDriver BurnDrvkof2002t = {
 	0x1000,	304, 224, 4, 3
 };
 
-// FBAS 拳皇2002 风云再起2017 20190117
+// FBAS 拳皇2002 风云再起2017 20190117	The King of Fighters 2002 (Rerise Of Chaos 2017 20190117)
 static struct BurnRomInfo kf2k2pls2017RomDesc[] = {
 	{ "265-p1ps.p1",    0x100000, 0x48bc0ea1, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
 	{ "265-p2ps.p2",    0x600000, 0xbafc5918, 1 | BRF_ESS | BRF_PRG }, //  1 & 1MB DUMMY FILE！
