@@ -21252,7 +21252,6 @@ struct BurnDriver BurnDrvkof2002jh = {
 };
 
 // GOTVG 拳皇2002  PLUS		The King of Fighters 2002 (Plus 20141209)
-// No spirits?
 static struct BurnRomInfo kof2002tRomDesc[] = {
 	{ "kof2002t.dec",   0x500000, 0x9f07b84a, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
 	
@@ -21287,11 +21286,10 @@ struct BurnDriver BurnDrvkof2002t = {
 };
 
 // FBAS 拳皇2002 风云再起2017 20190117
-// There are protections to be removed in new ROM sets.
 static struct BurnRomInfo kf2k2pls2017RomDesc[] = {
 	{ "265-p1ps.p1",    0x100000, 0x48bc0ea1, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
 	{ "265-p2ps.p2",    0x600000, 0xbafc5918, 1 | BRF_ESS | BRF_PRG }, //  1 & 1MB DUMMY FILE！
-	{ "265-p3ps.p3",    0x020000, 0xe58ba315, 0 | BRF_ESS | BRF_PRG }, //  1
+	{ "265-p3ps.p3",    0x020000, 0x5c8ec382, 0 | BRF_ESS | BRF_PRG }, //  1 Protection had been removed!
 
 	{ "265-s1ps.s1",	0x020000, 0x96bdd036, 2 | BRF_GRA },           // 2 
 
@@ -21337,7 +21335,7 @@ static INT32 kf2k2pls2017Init()
 			if (rom[i] == 0x4e7c) rom[i] = 0x4e75;
 		}
 
-		rom[0x700178/2] = 0x4e75;
+		//rom[0x7006b6/2] = 0x4e75;  // Different address to be patched from previous version.
 
 		SekOpen(0);
 		SekMapMemory(kf2k2pls2017ExtraROM, 0x900000, 0x91ffff, MAP_ROM);
@@ -21355,7 +21353,7 @@ static INT32 kf2k2pls2017Exit()
 }
 
 struct BurnDriver BurnDrvkf2k2pls2017 = {
-	"kf2k2pls2017", "kof2k2hd", "neogeo", NULL, "2019",
+	"kf2k2pls2017", "kof2k2hd", "neogeo", NULL, "20190117",
 	"The King of Fighters 2002 (Rerise Of Chaos 2017)\0", NULL, "hack", "Neo Geo MVS",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
