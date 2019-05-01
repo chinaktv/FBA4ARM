@@ -21354,7 +21354,7 @@ static INT32 kf2k2pls2017Exit()
 
 struct BurnDriver BurnDrvkf2k2pls2017 = {
 	"kf2k2pls2017", "kof2k2hd", "neogeo", NULL, "20190117",
-	"The King of Fighters 2002 (Rerise Of Chaos 2017)\0", NULL, "hack", "Neo Geo MVS",
+	"The King of Fighters 2002 (Rerise Of Chaos 2017 20190117)\0", NULL, "hack", "Neo Geo MVS",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
 	NULL, kf2k2pls2017RomInfo, kf2k2pls2017RomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
