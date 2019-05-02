@@ -20235,6 +20235,7 @@ struct BurnDriver BurnDrvkof2k2nd = {
 	0x1000,	304, 224, 4, 3
 };
 
+/* Disable it since we have kof2k3hd.
 // The King of Fighters 2003 (set 1, decrypted C)
 // Ported from FBAS.
 static struct BurnRomInfo kof2k3ndRomDesc[] = {
@@ -20270,6 +20271,9 @@ struct BurnDriver BurnDrvkof2k3nd = {
 	0x1000,	304, 224, 4, 3
 };
 
+*/
+
+/* Disable it since we have svcboot.
 // SvC Chaos - SNK vs Capcom (decrypted C)
 // Ported from FBAS.
 static struct BurnRomInfo svcndRomDesc[] = {
@@ -20298,11 +20302,12 @@ struct BurnDriver BurnDrvsvcnd = {
 	"svcnd", NULL, "neogeo", NULL, "2003",
 	"SvC Chaos - SNK vs Capcom (decrypted C)\0", NULL, "SNK Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_P32 | HARDWARE_SNK_ENCRYPTED_M1,GBF_VSFIGHT, FBF_KOF | FBF_SF,
+	BDF_GAME_WORKING, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_P32 | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF | FBF_SF,
 	NULL, svcndRomInfo, svcndRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, svcpcbDIPInfo,
 	svcpcbInit, NeoPVCExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000,	304, 224, 4, 3
 };
+*/
 
 // Samurai Shodown V / Samurai Spirits Zero (set 1, decrypted C)
 // Ported from FBAS.
@@ -20609,7 +20614,8 @@ struct BurnDriver BurnDrvmslug4nd = {
 	0x1000,	304, 224, 4, 3
 };
 
-// Metal Slug 5 (set 1, decrypted C)
+/* Disable it since we have fully decrtpted one - mslug5d.
+ Metal Slug 5 (set 1, decrypted C)
 // Ported from FBAS.
 static struct BurnRomInfo mslug5ndRomDesc[] = {
 	{ "268-p1cr.bin", 0x400000, 0xd0466792, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
@@ -20637,11 +20643,12 @@ struct BurnDriver BurnDrvmslug5nd = {
 	"mslug5nd", NULL, "neogeo", NULL, "2003",
 	"Metal Slug 5 (set 1, decrypted C)\0", NULL, "SNK Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_P32 | HARDWARE_SNK_ENCRYPTED_M1, GBF_RUNGUN, FBF_MSLUG,
+	BDF_GAME_WORKING, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_P32 | HARDWARE_SNK_ENCRYPTED_M1, GBF_RUNGUN, FBF_MSLUG,
 	NULL, mslug5ndRomInfo, mslug5ndRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
-	mslug5Init, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	mslug5Init, NeoPVCExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000,	304, 224, 4, 3
 };
+*/
 
 // Nightmare in the Dark (decrypted C)
 // Ported from FBAS.
@@ -20968,9 +20975,8 @@ struct BurnDriver BurnDrvkof2kp = {
 	0x1000,	304, 224, 4, 3
 };
 
-// The King of Fighters 2001 (Unknown Hack)
-// 月光宝盒 拳皇2001 什么改版？
-// Maybe not working?
+// The King of Fighters 2001 (Rerise of Chaos Plus)
+// 月光宝盒 拳皇2001 风云再起Plus
 static struct BurnRomInfo kof2k1pRomDesc[] = {
 	{ "2k1sp-p1.bin",	 0x100000, 0xf8a71b6f, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
 	{ "262-p2-08-e0.bin",0x400000, 0x8e0d8329, 1 | BRF_ESS | BRF_PRG }, //  1
@@ -20999,7 +21005,7 @@ STD_ROM_FN(kof2k1p)
 
 struct BurnDriver BurnDrvkof2k1p = {
 	"kof2k1p", "kof2k1nd", "neogeo", NULL, "2001",
-	"The King of Fighters 2001 (Unknown Hack)\0", NULL, "Eolith / SNK", "Neo Geo",
+	"The King of Fighters 2001 (Rerise of Chaos Plus)\0", NULL, "hack", "Neo Geo",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
 	NULL, kof2k1pRomInfo, kof2k1pRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
