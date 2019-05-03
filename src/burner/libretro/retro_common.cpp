@@ -77,22 +77,22 @@ static UINT8 diag_input_select_l_r[] =  {RETRO_DEVICE_ID_JOYPAD_SELECT, RETRO_DE
 
 // Global core options
 static const struct retro_variable var_empty = { NULL, NULL };
-static const struct retro_variable var_fba_allow_depth_32 = { "fba-allow-depth-32", "优先使用32位色; disabled|enabled" };
-static const struct retro_variable var_fba_vertical_mode = { "fba-vertical-mode", "竖版模式; disabled|enabled" };
-static const struct retro_variable var_fba_frameskip = { "fba-frameskip", "跳帧; 0|1|2|3|4|5" };
-static const struct retro_variable var_fba_cpu_speed_adjust = { "fba-cpu-speed-adjust", "CPU超频; 100|110|120|130|140|150|160|170|180|190|200" };
-static const struct retro_variable var_fba_diagnostic_input = { "fba-diagnostic-input", "基板设置键; None|Hold Start|Start + A + B|Hold Start + A + B|Start + L + R|Hold Start + L + R|Hold Select|Select + A + B|Hold Select + A + B|Select + L + R|Hold Select + L + R" };
-static const struct retro_variable var_fba_hiscores = { "fba-hiscores", "记录最高分; enabled|disabled" };
-static const struct retro_variable var_fba_samplerate = { "fba-samplerate", "采样率 (需重启核心); 48000|44100|22050|11025" };
-static const struct retro_variable var_fba_sample_interpolation = { "fba-sample-interpolation", "采样插值; 4-point 3rd order|2-point 1st order|disabled" };
-static const struct retro_variable var_fba_fm_interpolation = { "fba-fm-interpolation", "FM插值; 4-point 3rd order|disabled" };
-static const struct retro_variable var_fba_analog_speed = { "fba-analog-speed", "模拟输入速度; 10|9|8|7|6|5|4|3|2|1" };
+static const struct retro_variable var_fba_allow_depth_32 = { "fba-allow-depth-32", "Use 32-bits color depth when available; disabled|enabled" };
+static const struct retro_variable var_fba_vertical_mode = { "fba-vertical-mode", "Vertical mode; disabled|enabled" };
+static const struct retro_variable var_fba_frameskip = { "fba-frameskip", "Frameskip; 0|1|2|3|4|5" };
+static const struct retro_variable var_fba_cpu_speed_adjust = { "fba-cpu-speed-adjust", "CPU overclock; 100|110|120|130|140|150|160|170|180|190|200" };
+static const struct retro_variable var_fba_diagnostic_input = { "fba-diagnostic-input", "Diagnostic Input; None|Hold Start|Start + A + B|Hold Start + A + B|Start + L + R|Hold Start + L + R|Hold Select|Select + A + B|Hold Select + A + B|Select + L + R|Hold Select + L + R" };
+static const struct retro_variable var_fba_hiscores = { "fba-hiscores", "Hiscores; enabled|disabled" };
+static const struct retro_variable var_fba_samplerate = { "fba-samplerate", "Samplerate (need to quit retroarch); 48000|44100|22050|11025" };
+static const struct retro_variable var_fba_sample_interpolation = { "fba-sample-interpolation", "Sample Interpolation; 4-point 3rd order|2-point 1st order|disabled" };
+static const struct retro_variable var_fba_fm_interpolation = { "fba-fm-interpolation", "FM Interpolation; 4-point 3rd order|disabled" };
+static const struct retro_variable var_fba_analog_speed = { "fba-analog-speed", "Analog Speed; 10|9|8|7|6|5|4|3|2|1" };
 #ifdef USE_CYCLONE
-static const struct retro_variable var_fba_cyclone = { "fba-cyclone", "Cyclone (需要重启核心，会改变即时存档格式，可能降低兼容性，开启后风险自负); disabled|enabled" };
+static const struct retro_variable var_fba_cyclone = { "fba-cyclone", "Cyclone (need to quit retroarch, change savestate format, use at your own risk); disabled|enabled" };
 #endif
 
 // Neo Geo core options
-static const struct retro_variable var_fba_neogeo_mode = { "fba-neogeo-mode", "强制Neo Geo模式(需要多个BIOS); MVS|AES|UNIBIOS|DIPSWITCH" };
+static const struct retro_variable var_fba_neogeo_mode = { "fba-neogeo-mode", "Force Neo Geo mode (if available); MVS|AES|UNIBIOS|DIPSWITCH" };
 
 // Replace the char c_find by the char c_replace in the destination c string
 char* str_char_replace(char* destination, char c_find, char c_replace)
