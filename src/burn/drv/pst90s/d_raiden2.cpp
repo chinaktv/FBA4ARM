@@ -5162,3 +5162,164 @@ struct BurnDriver BurnDrvZerotm2k = {
 	Zerotm2kInit, DrvExit, ZeroteamFrame, ZeroteamDraw, DrvScan, &DrvRecalc, 0x800,
 	320, 256, 4, 3
 };
+
+// GOTVG 零组特工队 新版加强版	New Zero Team (Plus 20180219)
+static struct BurnRomInfo nzeroteampRomDesc[] = {
+	{ "SEIBU_1.U0224",		0x080000, 0xcc45b0c6, 1 | BRF_PRG | BRF_ESS }, //  0 V33 Code
+	{ "SEIBU_2.U0226",		0x080000, 0x8537b97d, 1 | BRF_PRG | BRF_ESS }, //  1
+
+	{ "copx-d3.bin",		0x020000, 0xfa2cf3ad, 2 | BRF_GRA },           //  2 Copx data
+
+	{ "seibu_3.u01019",		0x010000, 0x7ec1fbc3, 3 | BRF_PRG | BRF_ESS }, //  3 Z80 Code
+
+	{ "seibu_5.u0616",		0x010000, 0xce68ba3c, 4 | BRF_GRA },           //  4 Characters
+	{ "seibu_6.u0617",		0x010000, 0xcf44aea7, 4 | BRF_GRA },           //  5
+
+	{ "back-1",				0x100000, 0x8b7f9219, 5 | BRF_GRA },           //  6 Tiles
+	{ "back-2",				0x080000, 0xce61c952, 5 | BRF_GRA },           //  7
+
+	{ "obj-1",				0x200000, 0x45be8029, 6 | BRF_GRA },           //  8 Sprites (Encrypted)
+	{ "obj-2",				0x200000, 0xcb61c19d, 6 | BRF_GRA },           //  9
+
+	{ "seibu_4.u099",		0x040000, 0x48be32b1, 7 | BRF_SND },           // 10 OKI Samples
+	
+	{ "sysv33b-2.u0227.bin",	0x0117, 0xd9f4612f, 0 | BRF_OPT },
+	{ "sysv33b-1.u0222.bin",	0x0117, 0xf514a11f, 0 | BRF_OPT },
+};
+
+STD_ROM_PICK(nzeroteamp)
+STD_ROM_FN(nzeroteamp)
+
+struct BurnDriver BurnDrvnzeroteamp = {
+	"nzeroteamp", "zeroteam", NULL, NULL, "2018",
+	"New Zero Team (Plus 20180219)\0", NULL, "hack", "Miscellaneous",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	NULL, nzeroteampRomInfo, nzeroteampRomName, NULL, NULL, NULL, NULL, NzeroteaInputInfo, NzeroteaDIPInfo,
+	NzeroteamInit, DrvExit, ZeroteamFrame, ZeroteamDraw, DrvScan, &DrvRecalc, 0x800,
+	320, 256, 4, 3
+};
+
+// GOTVG 零组特工队 1V4版	Zero Team (1VS4 20180220)
+static struct BurnRomInfo zeroteam1v4RomDesc[] = {
+	{ "seibu__1.u024.5k",		0x040000, 0xc2f5bba6, 1 | BRF_PRG | BRF_ESS }, //  0 V30 Code
+	{ "seibu__3.u023.6k",		0x040000, 0xaa278057, 1 | BRF_PRG | BRF_ESS }, //  1
+	{ "seibu__2.u025.6l",		0x040000, 0x54f3d359, 1 | BRF_PRG | BRF_ESS }, //  2
+	{ "seibu__4.u026.5l",		0x040000, 0xae82d427, 1 | BRF_PRG | BRF_ESS }, //  3
+
+	{ "copx-d2.u0313.6n",		0x040000, 0xa6732ff9, 2 | BRF_PRG | BRF_OPT }, //  4 COPX MCU data
+
+	{ "seibu__5.u1110.5b", 		0x010000, 0x7ec1fbc3, 3 | BRF_PRG | BRF_ESS }, //  5 Z80 Code
+
+	{ "seibu__7.u072.5s",		0x010000, 0x9f6aa0f0, 4 | BRF_GRA },           //  6 Characters
+	{ "seibu__8.u077.5r",		0x010000, 0x68f7dddc, 4 | BRF_GRA },           //  7
+
+	{ "musha_back-1.u075.4s",  	0x100000, 0x8b7f9219, 5 | BRF_GRA },           //  8 Tiles
+	{ "musha_back-2.u0714.2s",  0x080000, 0xce61c952, 5 | BRF_GRA },           //  9
+
+	{ "musha_obj-1.u0811.6f",	0x200000, 0x45be8029, 6 | BRF_GRA },           // 10 Sprites (Encrypted)
+	{ "musha_obj-2.u082.5f",	0x200000, 0xcb61c19d, 6 | BRF_GRA },           // 11
+
+	{ "seibu__6.u105.4a",		0x040000, 0x48be32b1, 7 | BRF_SND },           // 12 OKI Samples
+
+	{ "v3c001.pal.u0310.jed", 	     		0x000288, 0x00000000, 0 | BRF_OPT },	       // 13 Pals
+	{ "v3c002.tibpal16l8-25.u0322.jed",  	0x000288, 0x00000000, 0 | BRF_OPT },	       // 14
+	{ "v3c003.ami18cv8p-15.u0619.jed",  	0x000288, 0x00000000, 0 | BRF_OPT },	       // 15
+	{ "v3c004x.ami18cv8pc-25.u0310.jed", 	0x000288, 0x00000000, 0 | BRF_OPT },	       // 16
+};
+
+STD_ROM_PICK(zeroteam1v4)
+STD_ROM_FN(zeroteam1v4)
+
+struct BurnDriver BurnDrvzeroteam1v4 = {
+	"zeroteam1v4", "zeroteam", NULL, NULL, "2018",
+	"Zero Team (1VS4 20180220)\0", "Unemulated protection", "hack", "Miscellaneous",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	NULL, zeroteam1v4RomInfo, zeroteam1v4RomName, NULL, NULL, NULL, NULL, ZeroteamInputInfo, ZeroteamDIPInfo,
+	ZeroteamInit, DrvExit, ZeroteamFrame, ZeroteamDraw, DrvScan, &DrvRecalc, 0x800,
+	320, 256, 4, 3
+};
+
+// FBA4DROID 零组特工队 无双版	Zero Team (Unrivalled Version 20180326)
+static struct BurnRomInfo zeroteamdwRomDesc[] = {
+	{ "b1.u024.5k",		0x040000, 0xb47b73b7, 1 | BRF_PRG | BRF_ESS }, //  0 V30 Code
+	{ "b3.u023.6k",		0x040000, 0x81979a9b, 1 | BRF_PRG | BRF_ESS }, //  1
+	{ "b2.u025.6l",		0x040000, 0x7513250c, 1 | BRF_PRG | BRF_ESS }, //  2
+	{ "b4.u026.5l",		0x040000, 0x10341ede, 1 | BRF_PRG | BRF_ESS }, //  3
+
+	{ "copx-d2.u0313.6n",		0x040000, 0xa6732ff9, 2 | BRF_PRG | BRF_OPT }, //  4 COPX MCU data
+
+	{ "5.c.u1110.5b", 		0x010000, 0xefc484ca, 3 | BRF_PRG | BRF_ESS }, //  5 Z80 Code
+
+	{ "b7.u072.5s",		0x010000, 0x30ec0241, 4 | BRF_GRA },           //  6 Characters
+	{ "b8.u077.5r",		0x010000, 0xe18b3a75, 4 | BRF_GRA },           //  7
+
+	{ "musha_back-1.u075.4s",  	0x100000, 0x8b7f9219, 5 | BRF_GRA },           //  8 Tiles
+	{ "musha_back-2.u0714.2s",  0x080000, 0xce61c952, 5 | BRF_GRA },           //  9
+
+	{ "musha_obj-1.u0811.6f",	0x200000, 0x45be8029, 6 | BRF_GRA },           // 10 Sprites (Encrypted)
+	{ "musha_obj-2.u082.5f",	0x200000, 0xcb61c19d, 6 | BRF_GRA },           // 11
+
+	{ "6.c.u105.4a",		0x040000, 0xb4a6e899, 7 | BRF_SND },           // 12 OKI Samples
+
+	{ "v3c001.pal.u0310.jed", 	     		0x000288, 0x00000000, 0 | BRF_OPT },	       // 13 Pals
+	{ "v3c002.tibpal16l8-25.u0322.jed",  	0x000288, 0x00000000, 0 | BRF_OPT },	       // 14
+	{ "v3c003.ami18cv8p-15.u0619.jed",  	0x000288, 0x00000000, 0 | BRF_OPT },	       // 15
+	{ "v3c004x.ami18cv8pc-25.u0310.jed", 	0x000288, 0x00000000, 0 | BRF_OPT },	       // 16
+};
+
+STD_ROM_PICK(zeroteamdw)
+STD_ROM_FN(zeroteamdw)
+
+struct BurnDriver BurnDrvzeroteamdw = {
+	"zeroteamdw", "zeroteam", NULL, NULL, "2018",
+	"Zero Team (Unrivalled Version 20180326)\0", "Unemulated protection", "hack", "Miscellaneous",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	NULL, zeroteamdwRomInfo, zeroteamdwRomName, NULL, NULL, NULL, NULL, ZeroteamInputInfo, ZeroteamDIPInfo,
+	ZeroteamInit, DrvExit, ZeroteamFrame, ZeroteamDraw, DrvScan, &DrvRecalc, 0x800,
+	320, 256, 4, 3
+};
+
+// GOTVG 零组特工队 噩梦版	Zero Team (Nightmare 20181022)
+// Decryped ROM! Not working!
+static struct BurnRomInfo zeroteamemRomDesc[] = {
+	{ "1.u024.5k",		0x040000, 0xed24e5cb, 1 | BRF_PRG | BRF_ESS }, //  0 V30 Code
+	{ "3b.u023.6k",		0x040000, 0x7b9c3823, 1 | BRF_PRG | BRF_ESS }, //  1
+	{ "b2.u025.6l",		0x040000, 0x652522a1, 1 | BRF_PRG | BRF_ESS }, //  2
+	{ "2.d.u026.5l",	0x040000, 0x7cde5a11, 1 | BRF_PRG | BRF_ESS }, //  3
+
+	{ "copx-d2.u0313.6n",		0x040000, 0xa6732ff9, 2 | BRF_PRG | BRF_OPT }, //  4 COPX MCU data
+
+	{ "seibu__5.u1110.5b", 		0x010000, 0x7ec1fbc3, 3 | BRF_PRG | BRF_ESS }, //  5 Z80 Code
+
+	{ "seibu__7.u072.5s",		0x010000, 0x9f6aa0f0, 4 | BRF_GRA },           //  6 Characters
+	{ "seibu__8.u077.5r",		0x010000, 0x68f7dddc, 4 | BRF_GRA },           //  7
+
+	{ "musha_back-1.u075.4s",  	0x100000, 0x8b7f9219, 5 | BRF_GRA },           //  8 Tiles
+	{ "musha_back-2.u0714.2s",  0x080000, 0xce61c952, 5 | BRF_GRA },           //  9
+
+	{ "musha_obj-1.u0811.6f",	0x200000, 0x45be8029, 6 | BRF_GRA },           // 10 Sprites (Encrypted)
+	{ "musha_obj-2.u082.5f",	0x200000, 0xcb61c19d, 6 | BRF_GRA },           // 11
+
+	{ "seibu__6.u105.4a",		0x040000, 0x48be32b1, 7 | BRF_SND },           // 12 OKI Samples
+
+	{ "v3c001.pal.u0310.jed", 	     		0x000288, 0x00000000, 0 | BRF_OPT },	       // 13 Pals
+	{ "v3c002.tibpal16l8-25.u0322.jed",  	0x000288, 0x00000000, 0 | BRF_OPT },	       // 14
+	{ "v3c003.ami18cv8p-15.u0619.jed",  	0x000288, 0x00000000, 0 | BRF_OPT },	       // 15
+	{ "v3c004x.ami18cv8pc-25.u0310.jed", 	0x000288, 0x00000000, 0 | BRF_OPT },	       // 16
+};
+
+STD_ROM_PICK(zeroteamem)
+STD_ROM_FN(zeroteamem)
+
+struct BurnDriver BurnDrvzeroteamem = {
+	"zeroteamem", "zeroteam", NULL, NULL, "2018",
+	"Zero Team (Nightmare 20181022)\0", "Unemulated protection", "hack", "Miscellaneous",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	NULL, zeroteamemRomInfo, zeroteamemRomName, NULL, NULL, NULL, NULL, ZeroteamInputInfo, ZeroteamDIPInfo,
+	ZeroteamInit, DrvExit, ZeroteamFrame, ZeroteamDraw, DrvScan, &DrvRecalc, 0x800,
+	320, 256, 4, 3
+};

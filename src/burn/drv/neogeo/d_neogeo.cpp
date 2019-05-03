@@ -21367,3 +21367,64 @@ struct BurnDriver BurnDrvkf2k2pls2017 = {
 	kf2k2pls2017Init, kf2k2pls2017Exit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000,	304, 224, 4, 3
 };
+
+// FBA4DROID 战国传承3 青版	Sengoku 3 (Blue Version 20170403)
+static struct BurnRomInfo sgk3ebRomDesc[] = {
+	{ "261-ph1.p1", 0x200000, 0x2df82062, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+
+	{ "sen3n_c1.rom", 0x800000, 0x9af7cbca, 3 | BRF_GRA },		 //  1 Sprite data
+	{ "sen3n_c2.rom", 0x800000, 0x2a1f874d, 3 | BRF_GRA },		 //  2
+	{ "sen3n_c3.rom", 0x800000, 0x5403adb5, 3 | BRF_GRA },		 //  3
+	{ "sen3n_c4.rom", 0x800000, 0x18926df6, 3 | BRF_GRA },		 //  4
+
+	{ "261-m1.bin",   0x020000, 0x36ed9cdd, 4 | BRF_ESS | BRF_PRG }, //  5 Z80 code
+
+	{ "261-v1.bin",   0x400000, 0x64c30081, 5 | BRF_SND },           //  6 Sound data
+	{ "261-v2.bin",   0x400000, 0x392a9c47, 5 | BRF_SND },           //  7
+	{ "261-v3.bin",   0x400000, 0xc1a7ebe3, 5 | BRF_SND },           //  8
+	{ "261-v4.bin",   0x200000, 0x9000d085, 5 | BRF_SND },           //  9
+};
+
+STDROMPICKEXT(sgk3eb, sgk3eb, neogeo)
+STD_ROM_FN(sgk3eb)
+
+struct BurnDriver BurnDrvsgk3eb = {
+	"sgk3eb", "sengok3n", "neogeo", NULL, "2017",
+	"Sengoku 3 (Blue Version 20170403)\0", NULL, "hack", "Neo Geo",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_SWAPP, GBF_SCRFIGHT, 0,
+	NULL, sgk3ebRomInfo, sgk3ebRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	sengoku3Init, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 320, 224, 4, 3
+};
+
+// GOTVG 战国传承3 青初版	Sengoku 3 (Initial Blue Version 20100531)
+static struct BurnRomInfo sgk3ebeRomDesc[] = {
+	{ "261-peb1.bin", 0x200000, 0x87a65e84, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+
+	{ "sen3n_c1.rom", 0x800000, 0x9af7cbca, 3 | BRF_GRA },		 //  1 Sprite data
+	{ "sen3n_c2.rom", 0x800000, 0x2a1f874d, 3 | BRF_GRA },		 //  2
+	{ "sen3n_c3.rom", 0x800000, 0x5403adb5, 3 | BRF_GRA },		 //  3
+	{ "sen3n_c4.rom", 0x800000, 0x18926df6, 3 | BRF_GRA },		 //  4
+
+	{ "261-m1.bin",   0x020000, 0x36ed9cdd, 4 | BRF_ESS | BRF_PRG }, //  5 Z80 code
+
+	{ "261-v1.bin",   0x400000, 0x64c30081, 5 | BRF_SND },           //  6 Sound data
+	{ "261-v2.bin",   0x400000, 0x392a9c47, 5 | BRF_SND },           //  7
+	{ "261-v3.bin",   0x400000, 0xc1a7ebe3, 5 | BRF_SND },           //  8
+	{ "261-v4.bin",   0x200000, 0x9000d085, 5 | BRF_SND },           //  9
+};
+
+STDROMPICKEXT(sgk3ebe, sgk3ebe, neogeo)
+STD_ROM_FN(sgk3ebe)
+
+struct BurnDriver BurnDrvsgk3ebe = {
+	"sgk3ebe", "sengok3n", "neogeo", NULL, "2010",
+	"Sengoku 3 (Initial Blue Version 20100531)\0", NULL, "hack", "Neo Geo",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_SWAPP, GBF_SCRFIGHT, 0,
+	NULL, sgk3ebeRomInfo, sgk3ebeRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	sengoku3Init, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 320, 224, 4, 3
+};
+

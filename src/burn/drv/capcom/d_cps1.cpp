@@ -22456,19 +22456,6 @@ static struct BurnRomInfo WofdrRomDesc[] = {
 	{ "tk2-q2.2k",     0x080000, 0x20f55ca9, BRF_SND | CPS1_QSOUND_SAMPLES },
 	{ "tk2-q3.3k",     0x080000, 0xbfcf6f52, BRF_SND | CPS1_QSOUND_SAMPLES },
 	{ "tk2-q4.4k",     0x080000, 0x36642e88, BRF_SND | CPS1_QSOUND_SAMPLES },
-	
-	A_BOARD_QSOUND_PLDS
-	
-	{ "tk263b.1a",     0x000117, 0xc4b0349b, BRF_OPT },	
-	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
-	{ "bprg1.11d",     0x000117, 0x31793da7, BRF_OPT },
-	
-	{ "ioc1.ic1",      0x000104, 0xa399772d, BRF_OPT },	
-	
-	{ "d7l1.7l",       0x000117, 0x27b7410d, BRF_OPT },	
-	{ "d8l1.8l",       0x000117, 0x539fc7da, BRF_OPT },
-	{ "d9k1.9k",       0x000117, 0x00000000, BRF_OPT | BRF_NODUMP },
-	{ "d10f1.10f",     0x000117, 0x6619c494, BRF_OPT },
 };
 
 STD_ROM_PICK(Wofdr)
@@ -22504,19 +22491,6 @@ static struct BurnRomInfo Wofr19RomDesc[] = {
 	{ "tk2-q2.2k",     0x080000, 0x20f55ca9, BRF_SND | CPS1_QSOUND_SAMPLES },
 	{ "tk2-q3.3k",     0x080000, 0xbfcf6f52, BRF_SND | CPS1_QSOUND_SAMPLES },
 	{ "tk2-q4.4k",     0x080000, 0x36642e88, BRF_SND | CPS1_QSOUND_SAMPLES },
-	
-	A_BOARD_QSOUND_PLDS
-	
-	{ "tk263b.1a",     0x000117, 0xc4b0349b, BRF_OPT },	// b-board PLDs
-	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
-	{ "bprg1.11d",     0x000117, 0x31793da7, BRF_OPT },
-	
-	{ "ioc1.ic1",      0x000104, 0xa399772d, BRF_OPT },	// c-board PLDs
-	
-	{ "d7l1.7l",       0x000117, 0x27b7410d, BRF_OPT },	// d-board PLDs
-	{ "d8l1.8l",       0x000117, 0x539fc7da, BRF_OPT },
-	{ "d9k1.9k",       0x000117, 0x00000000, BRF_OPT | BRF_NODUMP },
-	{ "d10f1.10f",     0x000117, 0x6619c494, BRF_OPT },
 };
 
 STD_ROM_PICK(Wofr19)
@@ -22553,19 +22527,6 @@ static struct BurnRomInfo WofjpsRomDesc[] = {
 	{ "tk2-q2.2k",     0x080000, 0x20f55ca9, BRF_SND | CPS1_QSOUND_SAMPLES },
 	{ "tk2-q3.3k",     0x080000, 0xbfcf6f52, BRF_SND | CPS1_QSOUND_SAMPLES },
 	{ "tk2-q4.4k",     0x080000, 0x36642e88, BRF_SND | CPS1_QSOUND_SAMPLES },
-	
-	A_BOARD_QSOUND_PLDS
-	
-	{ "tk263b.1a",     0x000117, 0xc4b0349b, BRF_OPT },	// b-board PLDs
-	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
-	{ "bprg1.11d",     0x000117, 0x31793da7, BRF_OPT },
-	
-	{ "ioc1.ic1",      0x000104, 0xa399772d, BRF_OPT },	// c-board PLDs
-	
-	{ "d7l1.7l",       0x000117, 0x27b7410d, BRF_OPT },	// d-board PLDs
-	{ "d8l1.8l",       0x000117, 0x539fc7da, BRF_OPT },
-	{ "d9k1.9k",       0x000117, 0x00000000, BRF_OPT | BRF_NODUMP },
-	{ "d10f1.10f",     0x000117, 0x6619c494, BRF_OPT },
 };
 
 STD_ROM_PICK(Wofjps)
@@ -22598,14 +22559,6 @@ static struct BurnRomInfo CaptcommpjyRomDesc[] = {
 
 	{ "cc_18.11c",     0x020000, 0x6de2c2db, BRF_SND | CPS1_OKIM6295_SAMPLES },
 	{ "cc_19.12c",     0x020000, 0xb99091ae, BRF_SND | CPS1_OKIM6295_SAMPLES },
-	
-	A_BOARD_PLDS
-	
-	{ "cc63b.1a",      0x000117, 0xcae8f0f9, BRF_OPT },
-	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
-	{ "ccprg.11d",     0x000117, 0xe1c225c4, BRF_OPT },
-	{ "ioc1.ic7",      0x000104, 0xa399772d, BRF_OPT },	
-	{ "c632.ic1",      0x000117, 0x0fbd9270, BRF_OPT },
 };
 
 STD_ROM_PICK(Captcommpjy)
@@ -22670,14 +22623,6 @@ static struct BurnRomInfo Captcommr1bsRomDesc[] = {
 
 	{ "cc_18.11c",     0x020000, 0x6de2c2db, BRF_SND | CPS1_OKIM6295_SAMPLES },
 	{ "cc_19.12c",     0x020000, 0xb99091ae, BRF_SND | CPS1_OKIM6295_SAMPLES },
-	
-	A_BOARD_PLDS
-	
-	{ "cc63b.1a",      0x000117, 0xcae8f0f9, BRF_OPT },
-	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
-	{ "ccprg.11d",     0x000117, 0xe1c225c4, BRF_OPT },
-	{ "ioc1.ic7",      0x000104, 0xa399772d, BRF_OPT },	
-	{ "c632.ic1",      0x000117, 0x0fbd9270, BRF_OPT },
 };
 
 STD_ROM_PICK(Captcommr1bs)
@@ -22774,14 +22719,6 @@ static struct BurnRomInfo Captcommr1dwRomDesc[] = {
 
 	{ "cc_18.11c",     0x020000, 0x6de2c2db, BRF_SND | CPS1_OKIM6295_SAMPLES },
 	{ "cc_19.12c",     0x020000, 0xb99091ae, BRF_SND | CPS1_OKIM6295_SAMPLES },
-	
-	A_BOARD_PLDS
-	
-	{ "cc63b.1a",      0x000117, 0xcae8f0f9, BRF_OPT },
-	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
-	{ "ccprg.11d",     0x000117, 0xe1c225c4, BRF_OPT },
-	{ "ioc1.ic7",      0x000104, 0xa399772d, BRF_OPT },	
-	{ "c632.ic1",      0x000117, 0x0fbd9270, BRF_OPT },
 };
 
 STD_ROM_PICK(Captcommr1dw)
@@ -22850,17 +22787,6 @@ static struct BurnRomInfo Dinows2019RomDesc[] = {
 	{ "cd-q2.2k",      0x080000, 0x770f4c47, BRF_SND | CPS1_QSOUND_SAMPLES },
 	{ "cd-q3.3k",      0x080000, 0x2f273ffc, BRF_SND | CPS1_QSOUND_SAMPLES },
 	{ "cd-q4.4k",      0x080000, 0x2c67821d, BRF_SND | CPS1_QSOUND_SAMPLES },
-	
-	A_BOARD_QSOUND_PLDS
-	
-	{ "cd63b.1a",      0x000117, 0xef72e902, BRF_OPT },	// b-board PLDs
-	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
-	{ "bprg1.11d",     0x000117, 0x31793da7, BRF_OPT },
-	{ "ioc1.ic1",      0x000104, 0xa399772d, BRF_OPT },	// c-board PLDs
-	{ "d7l1.7l",       0x000117, 0x27b7410d, BRF_OPT },	// d-board PLDs
-	{ "d8l1.8l",       0x000117, 0x539fc7da, BRF_OPT },
-	{ "d9k2.9k",       0x000117, 0xcd85a156, BRF_OPT },
-	{ "d10f1.10f",     0x000117, 0x6619c494, BRF_OPT },
 };
 
 STD_ROM_PICK(Dinows2019)
@@ -22933,17 +22859,6 @@ static struct BurnRomInfo DinojpsRomDesc[] = {
 	{ "cd-q2.2k",      0x080000, 0x770f4c47, BRF_SND | CPS1_QSOUND_SAMPLES },
 	{ "cd-q3.3k",      0x080000, 0x2f273ffc, BRF_SND | CPS1_QSOUND_SAMPLES },
 	{ "cd-q4.4k",      0x080000, 0x2c67821d, BRF_SND | CPS1_QSOUND_SAMPLES },
-	
-	A_BOARD_QSOUND_PLDS
-	
-	{ "cd63b.1a",      0x000117, 0xef72e902, BRF_OPT },	// b-board PLDs
-	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
-	{ "bprg1.11d",     0x000117, 0x31793da7, BRF_OPT },
-	{ "ioc1.ic1",      0x000104, 0xa399772d, BRF_OPT },	// c-board PLDs
-	{ "d7l1.7l",       0x000117, 0x27b7410d, BRF_OPT },	// d-board PLDs
-	{ "d8l1.8l",       0x000117, 0x539fc7da, BRF_OPT },
-	{ "d9k2.9k",       0x000117, 0xcd85a156, BRF_OPT },
-	{ "d10f1.10f",     0x000117, 0x6619c494, BRF_OPT },
 };
 
 STD_ROM_PICK(Dinojps)
@@ -23015,17 +22930,6 @@ static struct BurnRomInfo DinowjRomDesc[] = {
 	{ "cd-q2.2k",      0x080000, 0x770f4c47, BRF_SND | CPS1_QSOUND_SAMPLES },
 	{ "cd-q3.3k",      0x080000, 0x2f273ffc, BRF_SND | CPS1_QSOUND_SAMPLES },
 	{ "cd-q4.4k",      0x080000, 0x2c67821d, BRF_SND | CPS1_QSOUND_SAMPLES },
-	
-	A_BOARD_QSOUND_PLDS
-	
-	{ "cd63b.1a",      0x000117, 0xef72e902, BRF_OPT },	// b-board PLDs
-	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
-	{ "bprg1.11d",     0x000117, 0x31793da7, BRF_OPT },
-	{ "ioc1.ic1",      0x000104, 0xa399772d, BRF_OPT },	// c-board PLDs
-	{ "d7l1.7l",       0x000117, 0x27b7410d, BRF_OPT },	// d-board PLDs
-	{ "d8l1.8l",       0x000117, 0x539fc7da, BRF_OPT },
-	{ "d9k2.9k",       0x000117, 0xcd85a156, BRF_OPT },
-	{ "d10f1.10f",     0x000117, 0x6619c494, BRF_OPT },
 };
 
 STD_ROM_PICK(Dinowj)
@@ -23409,11 +23313,6 @@ static struct BurnRomInfo ffightj2uRomDesc[] = {
 
 	{ "ff_30.12e",     0x020000, 0x375c66e7, BRF_SND | CPS1_OKIM6295_SAMPLES },
 	{ "ff_31.13e",     0x020000, 0x1ef137f9, BRF_SND | CPS1_OKIM6295_SAMPLES },
-	
-	A_BOARD_PLDS
-	
-	{ "s222b.1a",      0x000117, 0x6d86b45e, BRF_OPT }, // b-board PLDs
-	{ "lwio.12c",      0x000117, 0xad52b90c, BRF_OPT },
 };
 
 STD_ROM_PICK(ffightj2u)
@@ -23461,11 +23360,6 @@ static struct BurnRomInfo ffight1v2RomDesc[] = {
 
 	{ "ffj_30.12c",    0x020000, 0x375c66e7, BRF_SND | CPS1_OKIM6295_SAMPLES },
 	{ "ffj_31.13c",    0x020000, 0x1ef137f9, BRF_SND | CPS1_OKIM6295_SAMPLES },
-	
-	A_BOARD_PLDS
-	
-	{ "s222b.1a",      0x000117, 0x6d86b45e, BRF_OPT }, // b-board PLDs
-	{ "lwio.12e",      0x000117, 0xad52b90c, BRF_OPT },
 };
 
 STD_ROM_PICK(ffight1v2)
@@ -23498,14 +23392,6 @@ static struct BurnRomInfo captcommr1v4RomDesc[] = {
 
 	{ "cc_18.11c",     0x020000, 0x6de2c2db, BRF_SND | CPS1_OKIM6295_SAMPLES },
 	{ "cc_19.12c",     0x020000, 0xb99091ae, BRF_SND | CPS1_OKIM6295_SAMPLES },
-	
-	A_BOARD_PLDS
-	
-	{ "cc63b.1a",      0x000117, 0xcae8f0f9, BRF_OPT },
-	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
-	{ "ccprg.11d",     0x000117, 0xe1c225c4, BRF_OPT },
-	{ "ioc1.ic7",      0x000104, 0xa399772d, BRF_OPT },	
-	{ "c632.ic1",      0x000117, 0x0fbd9270, BRF_OPT },
 };
 
 STD_ROM_PICK(captcommr1v4)
@@ -23541,14 +23427,6 @@ static struct BurnRomInfo captcommpRomDesc[] = {
 
 	{ "cc_18.11c",     0x020000, 0x6de2c2db, BRF_SND | CPS1_OKIM6295_SAMPLES },
 	{ "cc_19.12c",     0x020000, 0xb99091ae, BRF_SND | CPS1_OKIM6295_SAMPLES },
-	
-	A_BOARD_PLDS
-	
-	{ "cc63b.1a",      0x000117, 0xcae8f0f9, BRF_OPT },	// b-board PLDs
-	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
-	{ "ccprg.11d",     0x000117, 0xe1c225c4, BRF_OPT },
-	{ "ioc1.ic7",      0x000104, 0xa399772d, BRF_OPT },	// c-board PLDs
-	{ "c632.ic1",      0x000117, 0x0fbd9270, BRF_OPT },
 };
 
 STD_ROM_PICK(captcommp)
@@ -23728,14 +23606,6 @@ static struct BurnRomInfo knightscRomDesc[] = {
 
 	{ "kr_18.11c",     0x020000, 0xda69d15f, BRF_SND | CPS1_OKIM6295_SAMPLES },
 	{ "kr_19.12c",     0x020000, 0xbfc654e9, BRF_SND | CPS1_OKIM6295_SAMPLES },
-	
-	A_BOARD_PLDS
-	
-	{ "kr63b.1a",      0x000117, 0xfd5b6522, BRF_OPT },	// b-board PLDs
-	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
-	{ "bprg1.11d",     0x000117, 0x31793da7, BRF_OPT },
-	{ "ioc1.ic7",      0x000104, 0xa399772d, BRF_OPT },	// c-board PLDs
-	{ "c632.ic1",      0x000117, 0x0fbd9270, BRF_OPT },	
 };
 
 STD_ROM_PICK(knightsc)
@@ -23769,14 +23639,6 @@ static struct BurnRomInfo knightspRomDesc[] = {
 
 	{ "kr_18.11c",     0x020000, 0xda69d15f, BRF_SND | CPS1_OKIM6295_SAMPLES },
 	{ "kr_19.12c",     0x020000, 0xbfc654e9, BRF_SND | CPS1_OKIM6295_SAMPLES },
-	
-	A_BOARD_PLDS
-	
-	{ "kr63b.1a",      0x000117, 0xfd5b6522, BRF_OPT },	// b-board PLDs
-	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
-	{ "bprg1.11d",     0x000117, 0x31793da7, BRF_OPT },
-	{ "ioc1.ic7",      0x000104, 0xa399772d, BRF_OPT },	// c-board PLDs
-	{ "c632.ic1",      0x000117, 0x0fbd9270, BRF_OPT },	
 };
 
 STD_ROM_PICK(knightsp)
@@ -24380,7 +24242,7 @@ struct BurnDriver BurnDrvCpswonder3up = {
 	"wonder3up", "3wonders", NULL, NULL, "2019",
 	"Three Wonders (Wonder 3 Plus 20190419)\0", NULL, "hack", "CPS1",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 2, HARDWARE_CAPCOM_CPS1, GBF_MINIGAMES, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_CAPCOM_CPS1, GBF_MINIGAMES, 0,
 	NULL, wonder3upRomInfo, wonder3upRomName, NULL, NULL, NULL, NULL, ThreeWondersInputInfo, ThreeWondersDIPInfo,
 	DrvInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3

@@ -2128,3 +2128,46 @@ struct BurnDriver BurnDrvAirGalletah = {
 	&CaveRecalcPalette, 0x8000, 240, 320, 3, 4
 };
 
+// GOTVG 美少女战士之水手月亮 优化版 Pretty Soldier Sailor Moon (Optimised Version 20180419)
+static struct BurnRomInfo sailormntoRomDesc[] = {
+	{ "bpsm945a.u45", 0x080000, 0x0e7f4981, BRF_ESS | BRF_PRG }, //  0 CPU #0 code
+	{ "bpsm.u46",     0x200000, 0x32084e80, BRF_ESS | BRF_PRG }, //  1
+
+	{ "bpsm945a.u9",  0x080000, 0x438de548, BRF_ESS | BRF_PRG }, //  2 Z80 code
+
+	{ "bpsm.u76",     0x200000, 0xa243a5ba, BRF_GRA },			 //  3 Sprite data
+	{ "bpsm.u77",     0x200000, 0x5179a4ac, BRF_GRA },			 //  4
+
+	{ "bpsm.u53",     0x200000, 0xb9b15f83, BRF_GRA },			 //  5 Layer 0 Tile data
+	{ "bpsm.u54",     0x200000, 0x8f00679d, BRF_GRA },			 //  6 Layer 1 Tile data
+
+	{ "bpsm.u57",     0x200000, 0x86be7b63, BRF_GRA },			 //  7 Layer 2 Tile data
+	{ "bpsm.u58",     0x200000, 0xe0bba83b, BRF_GRA },			 //  8
+	{ "bpsm.u62",     0x200000, 0xa1e3bfac, BRF_GRA },			 //  9
+	{ "bpsm.u61",     0x200000, 0x6a014b52, BRF_GRA },			 // 10
+	{ "bpsm.u60",     0x200000, 0x992468c0, BRF_GRA },			 // 11
+
+	{ "bpsm.u65",     0x200000, 0xf60fb7b5, BRF_GRA },			 // 12
+	{ "bpsm.u64",     0x200000, 0x6559d31c, BRF_GRA },			 // 13
+	{ "bpsm.u63",     0x200000, 0xd57a56b4, BRF_GRA },			 // 14
+
+	{ "bpsm.u48",     0x200000, 0x498e4ed1, BRF_SND },			 // 15 MSM6295 #0 ADPCM data
+	{ "bpsm.u47",     0x080000, 0x0f2901b9, BRF_SND },			 // 16 MSM6295 #1 ADPCM data
+	
+	{ "sailormn_japan.nv", 0x0080, 0xea03c30a, BRF_ESS | BRF_PRG },
+};
+
+
+STD_ROM_PICK(sailormnto)
+STD_ROM_FN(sailormnto)
+
+struct BurnDriver BurnDrvsailormnto = {
+	"sailormnto", "sailormn", NULL,  NULL,"2018",
+	"Pretty Soldier Sailor Moon (Optimised Version 20180419)\0", NULL, "hack", "Cave",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_Z80, GBF_SCRFIGHT, 0,
+	NULL, sailormntoRomInfo, sailormntoRomName, NULL, NULL, NULL, NULL, sailormnInputInfo, NULL,
+	sailormnInit, DrvExit, DrvFrame, DrvDraw, DrvScan,
+	&CaveRecalcPalette, 0x8000, 320, 240, 4, 3
+};
+
