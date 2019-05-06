@@ -92,7 +92,7 @@ static const struct retro_variable var_fba_cyclone = { "fba-cyclone", "Cyclone (
 #endif
 
 // Neo Geo core options
-static const struct retro_variable var_fba_neogeo_mode = { "fba-neogeo-mode", "强制Neo Geo模式(需要多个BIOS); MVS|AES|UNIBIOS|DIPSWITCH" };
+static const struct retro_variable var_fba_neogeo_mode = { "fba-neogeo-mode", "强制Neo Geo模式(需要必要BIOS支持); MVS|AES|UNIBIOS|DIPSWITCH" };
 
 // Replace the char c_find by the char c_replace in the destination c string
 char* str_char_replace(char* destination, char c_find, char c_replace)
