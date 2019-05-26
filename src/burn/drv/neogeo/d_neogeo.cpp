@@ -21429,7 +21429,7 @@ struct BurnDriver BurnDrvsgk3ebe = {
 };
 
 // The King of Fighters '95 (PB Plus)
-// 月光宝盒 拳皇95 月光宝盒加强版
+// 月光宝盒 拳皇95 加强版
 // HARDWARE_SNK_SWAPP
 static struct BurnRomInfo kof95ehRomDesc[] = {
 	{ "084eh-p1.bin", 0x200000, 0xf3629844, 1 | BRF_ESS | BRF_PRG }, //  0 68K code			/ TC5316200
@@ -21575,7 +21575,7 @@ struct BurnDriver BurnDrvkof97boss = {
 };
 
 // The King of Fighters '97 (PB kof97evo)
-// 月光宝盒 拳皇97 kof97evo
+// 月光宝盒 拳皇97 革新版
 // kof97s23 in HBMAME.
 static struct BurnRomInfo kof97evoRomDesc[] = {
 	{ "232evo-p1.bin",   0x100000, 0xb440237d, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
@@ -21829,7 +21829,7 @@ struct BurnDriver BurnDrvmslughk = {
 };
 
 // Metal Slug 2 (PB Plus)
-// 月光宝盒 合金弹头2加强版
+// 月光宝盒 合金弹头2 加强版
 // Not available in HBMAME.
 static struct BurnRomInfo mslug2hkRomDesc[] = {
 	{ "241-p1h.bin",  0x100000, 0xafe35603, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
@@ -22057,7 +22057,7 @@ struct BurnDriver BurnDrvmslug6pl = {
 };
 
 // Strikers 1945 Plus (PB Plus)
-// 月光宝盒 1945+ 加强版
+// 月光宝盒 打击者1945+ 加强版
 // s1945pwe in HBMAME. /* Strikers 1945 Plus - Enhance by Wesker */
 static struct BurnRomInfo s1945phRomDesc[] = {
 	{ "s45pnh_p1.bin",   0x100000, 0x524eaf9c, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
