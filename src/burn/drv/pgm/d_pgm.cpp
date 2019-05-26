@@ -8344,7 +8344,7 @@ struct BurnDriver BurnDrvkillbldqy = {
 // -----------------------------------------------------------------------------
 // Hacks From Pandora's Box
 
-// Knights of Valour Plus / Sangoku Senki Plus (2007)
+// Knights of Valour Plus - Sangoku Senki Plus (2007)
 // 月光宝盒 三国战纪 正宗2007
 static struct BurnRomInfo kovplsRomDesc[] = {
 	{ "p0600.119",     		0x400000, 0x1dde3567, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
@@ -8377,8 +8377,8 @@ struct BurnDriver BurnDrvkovpls = {
 	448, 224, 4, 3
 };
 
-// Knights of Valour Plus / Sangoku Senki Plus (V119 unknown hack 2)
-// 月光宝盒 三国战纪119的哪个改版？
+// Knights of Valour Plus - Sangoku Senki Plus (V119 Charge Faster)
+// 月光宝盒 三国战纪集气快
 static struct BurnRomInfo kovplusfRomDesc[] = {
 	{ "p0600.119",     		0x400000, 0x74d4c301, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
@@ -8402,7 +8402,7 @@ STD_ROM_FN(kovplusf)
 
 struct BurnDriver BurnDrvkovplusf = {
 	"kovplusf", "kovplus", "pgm", NULL, "1999",
-	"Knights of Valour Plus - Sangoku Senki Plus (V119 unknown hack 2)\0", NULL, "hack", "PolyGameMaster",
+	"Knights of Valour Plus - Sangoku Senki Plus (V119 Charge Faster)\0", NULL, "hack", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
 	NULL, kovplusfRomInfo, kovplusfRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
@@ -8410,8 +8410,8 @@ struct BurnDriver BurnDrvkovplusf = {
 	448, 224, 4, 3
 };
 
-// Knights of Valour Plus / Sangoku Senki Plus (2007 Hack 2)
-// 月光宝盒 三国战纪 正宗2007
+// Knights of Valour Plus - Sangoku Senki Plus (2007 Charge Faster)
+// 月光宝盒 三国战纪2007集气快
 static struct BurnRomInfo kovplusf2RomDesc[] = {
 	{ "p0600.119",     		0x400000, 0xa69cc555, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
@@ -8435,7 +8435,7 @@ STD_ROM_FN(kovplusf2)
 
 struct BurnDriver BurnDrvkovplusf2 = {
 	"kovplusf2", "kovplus", "pgm", NULL, "1999",
-	"Knights of Valour Plus - Sangoku Senki Plus (2007 Hack 2)\0", NULL, "hack", "PolyGameMaster",
+	"Knights of Valour Plus - Sangoku Senki Plus (2007 Charge Faster)\0", NULL, "hack", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
 	NULL, kovplusf2RomInfo, kovplusf2RomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
@@ -8476,7 +8476,7 @@ struct BurnDriver BurnDrvkovpluss = {
 	448, 224, 4, 3
 };
 
-// Knights of Valour Plus / Sangoku Senki Plus (Real Last)
+// Knights of Valour Plus - Sangoku Senki Plus (Real Last)
 // 月光宝盒 三国战纪 正宗LAST
 static struct BurnRomInfo kovqyzRomDesc[] = {
 	{ "p0600.119",     		0x400000, 0x2e036469, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
