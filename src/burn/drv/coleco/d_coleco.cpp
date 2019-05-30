@@ -5559,19 +5559,19 @@ struct BurnDriver BurnDrvcv_trafficjam = {
 
 // Txupinazo! (SGM)
 
-static struct BurnRomInfo cv_TxupinazoRomDesc[] = {
-    { "Txupinazo_sgm",	0x8000, 0x28bdf665, BRF_PRG | BRF_ESS },
+static struct BurnRomInfo cv_txupinazoRomDesc[] = {
+    { "txupinazo_sgm",	0x8000, 0x28bdf665, BRF_PRG | BRF_ESS },
 };
 
-STDROMPICKEXT(cv_Txupinazo, cv_Txupinazo, cv_coleco)
-STD_ROM_FN(cv_Txupinazo)
+STDROMPICKEXT(cv_txupinazo, cv_txupinazo, cv_coleco)
+STD_ROM_FN(cv_txupinazo)
 
-struct BurnDriver BurnDrvcv_Txupinazo = {
-    "cv_Txupinazo", NULL, "cv_coleco", NULL, "2017",
-    "Txupinazo!\0", NULL, "Team Pixelboy", "ColecoVision",
+struct BurnDriver BurnDrvcv_txupinazo = {
+    "cv_txupinazo", NULL, "cv_coleco", NULL, "2017",
+    "txupinazo!\0", NULL, "Team Pixelboy", "ColecoVision",
     NULL, NULL, NULL, NULL,
     BDF_GAME_WORKING, 2, HARDWARE_COLECO, GBF_MISC, 0,
-    CVGetZipName, cv_TxupinazoRomInfo, cv_TxupinazoRomName, NULL, NULL, NULL, NULL, ColecoInputInfo, ColecoDIPInfo,
+    CVGetZipName, cv_txupinazoRomInfo, cv_txupinazoRomName, NULL, NULL, NULL, NULL, ColecoInputInfo, ColecoDIPInfo,
     DrvInitSGM, DrvExit, DrvFrame, TMS9928ADraw, DrvScan, NULL, TMS9928A_PALETTE_SIZE,
     272, 228, 4, 3
 };
