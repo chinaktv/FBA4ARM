@@ -6506,6 +6506,36 @@ struct BurnDriver BurnDrvkovemzs2019 = {
 	448, 224, 4, 3
 };
 
+// FBA4DROID 三国战纪 正宗2012 战神传说 2019 Knights of Valour Plus 2012(Legend of Warlord 2019 20190522)
+// Not working!
+static struct BurnRomInfo kovzscs2019RomDesc[] = {
+	{ "t0601X.rom",     		0x200000, 0x4fd175cc, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+	{ "t0602X.rom",     		0x200000, 0x33f00bf8, 1 | BRF_PRG | BRF_ESS },  //  1 68K Code
+
+	{ "m0600X.rom",     		0x800000, 0xa51f6c60, 2 | BRF_GRA },			//  2 Tile data
+	
+	{ "a0600X.rom",     		0x1c00000, 0x3455081f, 3 | BRF_GRA },			//  3 Sprite Color Data
+	
+	{ "b0600X.rom",     		0xc00000, 0x216a2ff1, 4 | BRF_GRA },			//  4 Sprite Masks & Color Indexes
+	
+	{ "p0600X.emzs",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  5 Samples
+	
+	//{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovzscs2019, kovzscs2019, pgm)
+STD_ROM_FN(kovzscs2019)
+
+struct BurnDriver BurnDrvkovzscs2019 = {
+	"kovzscs2019", "kovplus", "pgm", NULL, "2019",
+	"Knights of Valour Plus 2012(Legend of Warlord 2019 20190522)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kovzscs2019RomInfo, kovzscs2019RomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
 // GOTVG 三国战纪 正宗CXZZ 初心之作 Knights of Valour Plus (Work Of Initial Heart 20190415)
 static struct BurnRomInfo kovcxzzRomDesc[] = {
 	{ "p0600.119dec",     	0x400000, 0x545a902f, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
@@ -6775,10 +6805,10 @@ struct BurnDriver BurnDrvkovshpqxzqj = {
 	448, 224, 4, 3
 };
 
-// FBA4DROID 三国战纪 乱世枭雄 惊天战神 2019 Knights of Valour Super Heroes Plus (Incredible God of War 20190312)
+// FBA4DROID 三国战纪 乱世枭雄 惊天战神 2019 Knights of Valour Super Heroes Plus (Incredible God of War 20190526)
 static struct BurnRomInfo kovshp1v4xRomDesc[] = {
-	{ "m0601.rom",			0x200000, 0xf513d89c, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
-	{ "m0602.rom",			0x200000, 0x505c0fb9, 1 | BRF_PRG | BRF_ESS },  //  1 68K Code
+	{ "m0601.rom",			0x200000, 0x4bc18e5b, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+	{ "m0602.rom",			0x200000, 0xff2733f6, 1 | BRF_PRG | BRF_ESS },  //  1 68K Code
 
 	{ "t0600.rom",    		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  2 Tile data
 
@@ -6796,7 +6826,7 @@ STD_ROM_FN(kovshp1v4x)
 
 struct BurnDriver BurnDrvkovshp1v4x = {
 	"kovshp1v4x", "kovshp", "pgm", NULL, "2019",
-	"Knights of Valour Super Heroes Plus (Incredible God of War 20190312)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
+	"Knights of Valour Super Heroes Plus (Incredible God of War 20190526)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
 	NULL, kovshp1v4xRomInfo, kovshp1v4xRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovshxasDIPInfo,
@@ -7088,9 +7118,9 @@ struct BurnDriver BurnDrvkovshpqszl = {
 	448, 224, 4, 3
 };
 
-// FBA4DROID 三国战纪 乱世英雄 求生之路 天王版 Knights of Valour Super Heroes Plus (Road To Survival - Sky King 20190422)
+// FBA4DROID 三国战纪 乱世英雄 求生之路 天王版 Knights of Valour Super Heroes Plus (Road To Survival - Sky King 20190530)
 static struct BurnRomInfo kovshpqszltwRomDesc[] = {
-	{ "p0600h.rom",		0x4006f8, 0x16ae003b, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+	{ "p0600h.rom",		0x4006f8, 0xc0f02cd0, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
 	{ "t0600.rom",    		0x800000, 0xa919ec0f, 2 | BRF_GRA },			//  1 Tile data
 
@@ -7113,7 +7143,7 @@ STD_ROM_FN(kovshpqszltw)
 
 struct BurnDriver BurnDrvkovshpqszltw = {
 	"kovshpqszltw", "kovshpqszl", "pgm", NULL, "2019",
-	"Knights of Valour Super Heroes Plus (Road To Survival - Sky King 20190422)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
+	"Knights of Valour Super Heroes Plus (Road To Survival - Sky King 20190530)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
 	NULL, kovshpqszltwRomInfo, kovshpqszltwRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
