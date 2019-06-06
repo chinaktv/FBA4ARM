@@ -15143,8 +15143,8 @@ struct BurnDriver BurnDrvkof96ae = {
 	0x1000,	304, 224, 4, 3
 };
 
-// The King of Fighters '96 (Anniversary Edition 2.0, EGHT hack)
-// GOTVG updated it on 2018-12-25.
+// The King of Fighters '96 (The Aniversary Edition 2.0 Final Version 2019-05-30)
+// http://www.nesbbs.com/bbs/thread-47565-1-1.html
 static struct BurnRomInfo kof96ae20RomDesc[] = {
 	{ "214ae-p1.p1",  0x100000, 0x0de08cc3, 1 | BRF_ESS | BRF_PRG }, //  68K code
 	{ "214ae-p2.p2",  0x400000, 0x221d1d54, 1 | BRF_ESS | BRF_PRG }, //  
@@ -15155,8 +15155,8 @@ static struct BurnRomInfo kof96ae20RomDesc[] = {
 	{ "214-c2ae2.c2",  0x800000, 0x6ff22256, 3 | BRF_GRA },
 	{ "214-c1ae2.c3",  0x800000, 0x48d81318, 3 | BRF_GRA },
 	{ "214-c1ae2.c4",  0x800000, 0xd69836e6, 3 | BRF_GRA },
-	{ "214-c1ae2.c5",  0x800000, 0x8bb710f2, 3 | BRF_GRA },
-	{ "214-c1ae2.c6",  0x800000, 0xfc99d445, 3 | BRF_GRA },
+	{ "214-c1ae2.c5",  0x800000, 0xed71e6bb, 3 | BRF_GRA },
+	{ "214-c1ae2.c6",  0x800000, 0x059fa364, 3 | BRF_GRA },
 
 	{ "214-m1ae2.m1",  0x020000, 0x3a4a7c21, 4 | BRF_ESS | BRF_PRG }, // Z80 code
 
@@ -15169,8 +15169,8 @@ STDROMPICKEXT(kof96ae20, kof96ae20, neogeo)
 STD_ROM_FN(kof96ae20)
 
 struct BurnDriver BurnDrvkof96ae20 = {
-	"kof96ae20", "kof96", "neogeo", NULL, "2009",
-	"The King of Fighters '96 (Anniversary Edition 2.0, EGHT hack)\0", NULL, "hack", "Neo Geo MVS",
+	"kof96ae20", "kof96", "neogeo", NULL, "2019",
+	"The King of Fighters '96 (The Aniversary Edition 2.0 Final Version 2019-05-30)\0", NULL, "hack", "Neo Geo MVS",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
 	NULL, kof96ae20RomInfo, kof96ae20RomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,

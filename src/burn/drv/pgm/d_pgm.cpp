@@ -7418,37 +7418,35 @@ struct BurnDriver BurnDrvkovytzyftxq = {
 	448, 224, 4, 3
 };
 
-// GOTVG 三国战纪 一统中原 青版 Knights of Valour - Yi Tong Zhong Yuan (Blue Version) (20190325)
-// Not working!
-static struct BurnRomInfo kovytzyftxqtRomDesc[] = {
-	{ "ytzy_v201cn.dec",	0x400000, 0x8a5702ff, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code , weird size!
+// Mame32more 0.84.2.210 三国战纪 一统中原 青版 
+// Knights of Valour - Yi Tong Zhong Yuan (Blue Version) (20190501)
+static struct BurnRomInfo kovytzyceRomDesc[] = {
+	{ "ytzyce_2019-5.rom",	0x400000, 0xa5376f61, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code , weird size!
 
 	{ "t0600.rom",    		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
 
 	{ "a0600.rom",	   		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
 	{ "a0601.rom",	   		0x800000, 0xff7a4373, 3 | BRF_GRA }, 	        //  3 
 	{ "a0602.rom",	   		0x800000, 0xf25b6930, 3 | BRF_GRA }, 	        //  4
-	{ "a0540.rom",	   		0x800000, 0x5b170980, 3 | BRF_GRA }, 	        //  5
-	//{ "a0603.rom",	   		0x400000, 0x120c6d35, 3 | BRF_GRA }, 	        //  Expanded ROM??? Maybe not necessary?
+	{ "a0540.rom",	   		0x800000, 0x0acdd7f2, 3 | BRF_GRA }, 	        //  5
 
 	{ "b0600.rom",	   		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
-	{ "b0540.rom",	   		0x800000, 0xa78ff75c, 4 | BRF_GRA },			//  7
-	//{ "b0601.rom",	   		0x400000, 0x16a7afde, 4 | BRF_GRA },			//  Expanded ROM??? Maybe not necessary?
+	{ "b0540.rom",	   		0x800000, 0x767bf47a, 4 | BRF_GRA },			//  7
 
 	{ "m0600.rom",	   		0x400000, 0x1f981f2c, 5 | BRF_SND },			//  8 Samples
 
-	{ "kovsh_v100_china.asic", 	0x004000, 0xe7d55d8b, 7 | BRF_PRG | BRF_ESS },  //  9 Internal ARM7 Rom
+	{ "kovytzyce_v100_china.asic", 	0x004000, 0x36a4ecc8, 7 | BRF_PRG | BRF_ESS },  //  9 Internal ARM7 Rom
 };
 
-STDROMPICKEXT(kovytzyftxqt, kovytzyftxqt, pgm)
-STD_ROM_FN(kovytzyftxqt)
+STDROMPICKEXT(kovytzyce, kovytzyce, pgm)
+STD_ROM_FN(kovytzyce)
 
-struct BurnDriver BurnDrvkovytzyftxqt = {
-	"kovytzyftxqt", "kovshp", "pgm", NULL, "2019",
-	"Knights of Valour - Yi Tong Zhong Yuan (Blue Version) (20190325)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
+struct BurnDriver BurnDrvkovytzyce = {
+	"kovytzyce", "kovshp", "pgm", NULL, "2019",
+	"Knights of Valour - Yi Tong Zhong Yuan (Blue Version) (20190501)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
-	NULL, kovytzyftxqtRomInfo, kovytzyftxqtRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovshxasDIPInfo,
+	NULL, kovytzyceRomInfo, kovytzyceRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovshxasDIPInfo,
 	kovshpInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
 };
@@ -7614,6 +7612,41 @@ struct BurnDriver BurnDrvkovshpz = {
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
 	NULL, kovshpzRomInfo, kovshpzRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovshpInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// Luan Shi Ying Xiong (hack of Knights of Valour Super Heroes Plus, ver. 500) [bootleg]
+// FBAS 210 乱世英雄
+// lsyx_v500cn.rom is crypted here.
+static struct BurnRomInfo kovlsyxRomDesc[] = {
+	{ "lsyx_v500cn.rom",	0x400000, 0xdbfb1a8e, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",    		0x800000, 0xa919ec0f, 2 | BRF_GRA },			//  1 Tile data
+
+	{ "a0600.rom",	   		0x800000, 0x47794602, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",	   		0x800000, 0xd94abe4b, 3 | BRF_GRA }, 	        //  3 
+	{ "a0602.rom",	   		0x800000, 0xe7a32959, 3 | BRF_GRA }, 	        //  4
+	{ "a0540.rom",	   		0x800000, 0x6afd8e35, 3 | BRF_GRA }, 	        //  5
+	{ "a0541.rom",	   		0x800000, 0x164de1a8, 3 | BRF_GRA }, 	        //  6
+
+	{ "b0600.rom",	   		0x800000, 0xf48a3b3d, 4 | BRF_GRA },			//  7 Sprite Masks & Color Indexes
+	{ "b0540.rom",	   		0x800000, 0xc3eefa33, 4 | BRF_GRA },			//  8
+
+	{ "m0600.rom",	   		0x400000, 0x459ad15f, 5 | BRF_SND },			//  9 Samples
+
+	{ "lsyx_v100_china.asic", 	0x004000, 0x8598d603, 7 | BRF_PRG | BRF_ESS },  //  10 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovlsyx, kovlsyx, pgm)
+STD_ROM_FN(kovlsyx)
+
+struct BurnDriver BurnDrvkovlsyx = {
+	"kovlsyx", "kovshp", "pgm", NULL, "2014",
+	"Luan Shi Ying Xiong (hack of Knights of Valour Super Heroes Plus, ver. 500) [bootleg]\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
+	NULL, kovlsyxRomInfo, kovlsyxRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
 	kovshpInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
 };
@@ -7974,6 +8007,44 @@ struct BurnDriver BurnDrvkov2pmemm = {
 	448, 224, 4, 3
 };
 
+/* Not Working!
+// FBAS 三国战纪 2 (版本 106S-V3.1, 修改版)
+// Knights of Valour 2 (ver. 106S-V3.1, hack)
+static struct BurnRomInfo kov2106sRomDesc[] = {
+	{ "u18s.106",	   		0x400000, 0xcd0bb205, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t1200.rom",	   		0x800000, 0xd7e26609, 2 | BRF_GRA },			//  1 Tile data
+
+	{ "a1200.rom",	   		0x800000, 0xceeb81d8, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a1201.rom",   		0x800000, 0x21063ca7, 3 | BRF_GRA },			//  3
+	{ "a1202.rom",	   		0x800000, 0x4bb92fae, 3 | BRF_GRA },			//  4
+	{ "a1203.rom",	   		0x800000, 0xe73cb627, 3 | BRF_GRA },			//  5
+	{ "a1204.rom",   		0x200000, 0x14b4b5bb, 3 | BRF_GRA },			//  6
+
+	{ "b1200.rom",	   		0x800000, 0xbed7d994, 4 | BRF_GRA },			//  7 Sprite Masks & Color Indexes
+	{ "b1201.rom",	   		0x800000, 0xf251eb57, 4 | BRF_GRA },			//  8
+
+	{ "m1200.rom",	   		0x800000, 0xb0d88720, 5 | BRF_SND },			//  9 Samples
+
+	{ "kov2_v100_hongkong.asic", 	0x004000, 0xe0d7679f, 7 | BRF_PRG | BRF_ESS },  // 10 Internal ARM7 Rom
+
+	{ "u19s.102",	   		0x200000, 0x00ed5a91, 8 | BRF_PRG | BRF_ESS },  // 11 External ARM7 Rom
+};
+
+STDROMPICKEXT(kov2106s, kov2106s, pgm)
+STD_ROM_FN(kov2106s)
+
+struct BurnDriver BurnDrvkov2106s = {
+	"kov2106s", "kov2", "pgm", NULL, "2018",
+	"Knights of Valour 2 (ver. 106S-V3.1, hack)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
+	NULL, kov2106sRomInfo, kov2106sRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kov2DIPInfo,
+	kov2Init, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+*/
+
 //olds100a
 
 // FBA4DROID 西游释厄传超级版 大圣归来 Xi Yo Gi Shi Re Zuang Super (Return of Monkey King 20181229)
@@ -8332,6 +8403,93 @@ struct BurnDriver BurnDrvoldsplushmf = {
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
 	NULL, oldsplushmfRomInfo, oldsplushmfRomName, NULL, NULL, NULL, NULL, pgmInputInfo, puzzli2DIPInfo,
 	oldsplusInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// FBAS 西行平妖记 - 大圣归来 (西游释厄传 Super 修改版)
+// Xi Xing Ping Yao Ji - Da Sheng Gui Lai (hack of Xi You Shi E Zhuan Super)
+// dsgl_prg.rom is the only difference from olds100adsgl. 
+static struct BurnRomInfo oldsdsglRomDesc[] = {
+	{ "dsgl_prg.rom",	   	0x400000, 0x20f8c0e2, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0500.rom",	   		0x400000, 0xd881726c, 2 | BRF_GRA },			//  1 Tile data
+	{ "t0501.rom",	   		0x200000, 0xd2106864, 2 | BRF_GRA },			//  2
+
+	{ "a0500.rom",	   		0x400000, 0x80a59197, 3 | BRF_GRA },			//  3 Sprite Color Data
+	{ "a0501.rom",	   		0x400000, 0x98c931b1, 3 | BRF_GRA },			//  4
+	{ "a0502.rom",	   		0x400000, 0xc3fcdf1d, 3 | BRF_GRA },			//  5
+	{ "a0503.rom",	   		0x400000, 0x066dffec, 3 | BRF_GRA },			//  6
+	{ "a0504.rom",	   		0x400000, 0x45337583, 3 | BRF_GRA },			//  7
+	{ "a0505.rom",	   		0x400000, 0x5b8cf3a5, 3 | BRF_GRA },			//  8
+	{ "dsgl_a0506.rom",	   	0x400000, 0x2e50561c, 3 | BRF_GRA },			//  9
+
+	{ "b0500.rom",	   		0x400000, 0xcde07f74, 4 | BRF_GRA },			// 10 Sprite Masks & Color Indexes
+	{ "b0501.rom",	   		0x400000, 0x1546c2e9, 4 | BRF_GRA },			// 11
+	{ "b0502.rom",	   		0x400000, 0xe97b31c3, 4 | BRF_GRA },			// 12
+	{ "dsgl_b0503.u16",	   	0x400000, 0x069ec4d1, 4 | BRF_GRA },			// 13
+
+	{ "m0500.rom",	   		0x200000, 0x37928cdd, 5 | BRF_SND },			// 14 Samples
+	
+#if !defined (ROM_VERIFY)
+	{ "kd-u6.512",	   		0x010000, 0xe7613dda, 9 | BRF_PRG | BRF_ESS },  // 15 Protection Rom
+#else
+	{ "ram_dump",	   		0x040000, 0x280cfb4e, 0 | BRF_OPT },
+#endif
+};
+
+STDROMPICKEXT(oldsdsgl, oldsdsgl, pgm)
+STD_ROM_FN(oldsdsgl)
+
+struct BurnDriver BurnDrvoldsdsgl = {
+	"oldsdsgl", "olds", "pgm", NULL, "2018",
+	"Xi Xing Ping Yao Ji - Da Sheng Gui Lai (hack of Xi You Shi E Zhuan Super)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM, GBF_SCRFIGHT, 0,
+	NULL, oldsdsglRomInfo, oldsdsglRomName, NULL, NULL, NULL, NULL, pgmInputInfo, olds100DIPInfo,
+	oldsInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// FBAS 西天取真经 - 幻行无极 (西游释厄传 Super 修改版)
+// Xi Tian Qu Zhen Jing - Huan Xing Wu Ji (hack of Xi You Shi E Zhuan Super)
+static struct BurnRomInfo oldshxwjRomDesc[] = {
+	{ "hxwj_prg.rom",	   	0x400000, 0x996b99eb, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0500.rom",	   		0x400000, 0xd881726c, 2 | BRF_GRA },			//  1 Tile data
+	{ "t0501.rom",	   		0x200000, 0xd2106864, 2 | BRF_GRA },			//  2
+
+	{ "a0500.rom",	   		0x400000, 0x80a59197, 3 | BRF_GRA },			//  3 Sprite Color Data
+	{ "a0501.rom",	   		0x400000, 0x98c931b1, 3 | BRF_GRA },			//  4
+	{ "a0502.rom",	   		0x400000, 0xc3fcdf1d, 3 | BRF_GRA },			//  5
+	{ "a0503.rom",	   		0x400000, 0x066dffec, 3 | BRF_GRA },			//  6
+	{ "a0504.rom",	   		0x400000, 0x45337583, 3 | BRF_GRA },			//  7
+	{ "a0505.rom",	   		0x400000, 0x5b8cf3a5, 3 | BRF_GRA },			//  8
+	{ "hxwj_a0506.rom",	   	0x400000, 0x6f71bdbb, 3 | BRF_GRA },			//  9
+
+	{ "b0500.rom",	   		0x400000, 0xcde07f74, 4 | BRF_GRA },			// 10 Sprite Masks & Color Indexes
+	{ "b0501.rom",	   		0x400000, 0x1546c2e9, 4 | BRF_GRA },			// 11
+	{ "b0502.rom",	   		0x400000, 0xe97b31c3, 4 | BRF_GRA },			// 12
+	{ "hxwj_b0503.u16",	   	0x400000, 0x3bf971d0, 4 | BRF_GRA },			// 13
+
+	{ "m0500.rom",	   		0x200000, 0x37928cdd, 5 | BRF_SND },			// 14 Samples
+	
+#if !defined (ROM_VERIFY)
+	{ "kd-u6.512",	   		0x010000, 0xe7613dda, 9 | BRF_PRG | BRF_ESS },  // 15 Protection Rom
+#else
+	{ "ram_dump",	   		0x040000, 0x280cfb4e, 0 | BRF_OPT },
+#endif
+};
+
+STDROMPICKEXT(oldshxwj, oldshxwj, pgm)
+STD_ROM_FN(oldshxwj)
+
+struct BurnDriver BurnDrvoldshxwj = {
+	"oldshxwj", "olds", "pgm", NULL, "2019",
+	"Xi Tian Qu Zhen Jing - Huan Xing Wu Ji (hack of Xi You Shi E Zhuan Super)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM, GBF_SCRFIGHT, 0,
+	NULL, oldshxwjRomInfo, oldshxwjRomName, NULL, NULL, NULL, NULL, pgmInputInfo, olds100DIPInfo,
+	oldsInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
 };
 

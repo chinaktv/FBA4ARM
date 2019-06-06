@@ -75,7 +75,7 @@ static UINT8 diag_input_select[] =      {RETRO_DEVICE_ID_JOYPAD_SELECT, RETRO_DE
 static UINT8 diag_input_select_a_b[] =  {RETRO_DEVICE_ID_JOYPAD_SELECT, RETRO_DEVICE_ID_JOYPAD_A, RETRO_DEVICE_ID_JOYPAD_B, RETRO_DEVICE_ID_JOYPAD_EMPTY };
 static UINT8 diag_input_select_l_r[] =  {RETRO_DEVICE_ID_JOYPAD_SELECT, RETRO_DEVICE_ID_JOYPAD_L, RETRO_DEVICE_ID_JOYPAD_R, RETRO_DEVICE_ID_JOYPAD_EMPTY };
 
-/// Global core options
+// Global core options
 static const struct retro_variable var_empty = { NULL, NULL };
 static const struct retro_variable var_fba_allow_depth_32 = { "fba-allow-depth-32", "Use 32-bits color depth when available; disabled|enabled" };
 static const struct retro_variable var_fba_vertical_mode = { "fba-vertical-mode", "Vertical mode; disabled|enabled" };
