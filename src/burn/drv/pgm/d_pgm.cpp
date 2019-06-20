@@ -7102,7 +7102,7 @@ static struct BurnRomInfo kovshpqszlRomDesc[] = {
 
 	{ "m0600.rom",	   		0x400000, 0xec3f335d, 5 | BRF_SND },			//  8 Samples
 
-	{ "kovsh_v100_china.asic", 	0x004000, 0x4627f36f, 7 | BRF_PRG | BRF_ESS },  //  9 Internal ARM7 Rom
+	{ "qszl_v100_china.asic", 	0x004000, 0x4627f36f, 7 | BRF_PRG | BRF_ESS },  //  9 Internal ARM7 Rom
 };
 
 STDROMPICKEXT(kovshpqszl, kovshpqszl, pgm)
@@ -7647,6 +7647,75 @@ struct BurnDriver BurnDrvkovlsyx = {
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
 	NULL, kovlsyxRomInfo, kovlsyxRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovshpInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// Luan Shi Ying Xiong - Qun Xiong Zhu Lu Plus (hack of Knights of Valour Super Heroes Plus, ver. 500) [bootleg]
+// FBAS 210 乱世英雄 群雄逐鹿 加强版
+// qxzlp_v500cn.rom is crypted here.
+static struct BurnRomInfo kovlsyxqxzlpRomDesc[] = {
+	{ "new_qxzlp_v500cn.rom",	0x400000, 0x0ce0c165, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",    		0x800000, 0xa919ec0f, 2 | BRF_GRA },			//  1 Tile data
+
+	{ "a0600.rom",	   		0x800000, 0x72643288, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",	   		0x800000, 0x9c1d1bea, 3 | BRF_GRA }, 	        //  3 
+	{ "a0602.rom",	   		0x800000, 0x7b437e0f, 3 | BRF_GRA }, 	        //  4
+	{ "a0540.rom",	   		0x800000, 0x612306ed, 3 | BRF_GRA }, 	        //  5
+	{ "a0541.rom",	   		0x800000, 0xfac5160e, 3 | BRF_GRA }, 	        //  6
+
+	{ "b0600.rom",	   		0x800000, 0x0646c5ef, 4 | BRF_GRA },			//  7 Sprite Masks & Color Indexes
+	{ "b0540.rom",	   		0x800000, 0xb7032905, 4 | BRF_GRA },			//  8
+
+	{ "m0600.rom",	   		0x400000, 0xec3f335d, 5 | BRF_SND },			//  9 Samples
+
+	{ "qxzl_v100_china.asic", 	0x004000, 0xd9a43086, 7 | BRF_PRG | BRF_ESS },  //  10 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovlsyxqxzlp, kovlsyxqxzlp, pgm)
+STD_ROM_FN(kovlsyxqxzlp)
+
+struct BurnDriver BurnDrvkovlsyxqxzlp = {
+	"kovlsyxqxzlp", "kovshp", "pgm", NULL, "2018",
+	"Luan Shi Ying Xiong - Qun Xiong Zhu Lu Plus (hack of Knights of Valour Super Heroes Plus, ver. 500)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
+	NULL, kovlsyxqxzlpRomInfo, kovlsyxqxzlpRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovshpInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// Ao Shi San Guo (bootleg of Knights of Valour Super Heroes Plus, ver. 202CN) [bootleg]
+// FBAS 210 傲世三国
+// assg_v202cn.rom is crypted here.
+static struct BurnRomInfo kovassgaRomDesc[] = {
+	{ "new_assg_v202cn.rom",	0x400000, 0xa889d7e5, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",    		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
+
+	{ "a0600.rom",	   		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",	   		0x800000, 0xff7a4373, 3 | BRF_GRA }, 	        //  3 
+	{ "a0602.rom",	   		0x800000, 0xe7a32959, 3 | BRF_GRA }, 	        //  4
+	{ "a0603as.rom",	   	0x800000, 0x7057b37e, 3 | BRF_GRA }, 	        //  5
+
+	{ "b0600.rom",	   		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0601as.rom",	   	0x800000, 0x3784fb49, 4 | BRF_GRA },			//  7
+
+	{ "m0600.rom",	   		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  8 Samples
+
+	{ "kovassga_v100_china.asic", 	0x004000, 0x0f09a5c1, 7 | BRF_PRG | BRF_ESS },  //  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovassga, kovassga, pgm)
+STD_ROM_FN(kovassga)
+
+struct BurnDriver BurnDrvkovassga = {
+	"kovassga", "kovshp", "pgm", NULL, "2008",
+	"Ao Shi San Guo (bootleg of Knights of Valour Super Heroes Plus, ver. 202CN)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
+	NULL, kovassgaRomInfo, kovassgaRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
 	kovshpInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
 };
