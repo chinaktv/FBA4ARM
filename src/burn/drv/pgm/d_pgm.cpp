@@ -5863,9 +5863,8 @@ struct BurnDriver BurnDrvEspgalbl = {
 //kovplus
 
 // FBA4DROID 三国战纪 正宗1V8 Knights of Valour - Sangoku Senki (1VS8 20170218)
-// Not working due to protection?
 static struct BurnRomInfo kov8RomDesc[] = {
-	{ "Fzzf_v8.rom",     	0x400000, 0xf680fc22, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+	{ "Fzzf_v8.rom",     	0x400000, 0x3e937269, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
 	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
 	

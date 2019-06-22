@@ -22311,3 +22311,339 @@ struct BurnDriver BurnDrvkof10thuo = {
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000,	304, 224, 4, 3
 };
+
+// Samurai Shodown / Samurai Spirits (Boss Hack)
+// GOTVG 侍魂BOSS版
+// samshob in HBMAME.
+
+static struct BurnRomInfo samshobtRomDesc[] = {
+	{ "045-p1.bin",   0x080000, 0xbc16e98b, 1 | BRF_ESS | BRF_PRG },
+	{ "045-p2.bin",   0x080000, 0x71768728, 1 | BRF_ESS | BRF_PRG },
+	{ "045-p3.bin",   0x080000, 0x38ee9ba9, 1 | BRF_ESS | BRF_PRG },
+
+	{ "045-s1.s1",    0x020000, 0x9142a4d3, 2 | BRF_GRA },
+
+	{ "045-c1.c1",    0x200000, 0x2e5873a4, 3 | BRF_GRA },
+	{ "045-c2.c2",    0x200000, 0x04febb10, 3 | BRF_GRA },
+	{ "045-c3.c3",    0x200000, 0xf3dabd1e, 3 | BRF_GRA },
+	{ "045-c4.c4",    0x200000, 0x935c62f0, 3 | BRF_GRA },
+	{ "045-c5.bin",   0x080000, 0xa2bb8284, 3 | BRF_GRA },
+	{ "045-c6.bin",   0x080000, 0x4fa71252, 3 | BRF_GRA },
+
+	{ "045-m1.m1",    0x020000, 0x95170640, 4 | BRF_ESS | BRF_PRG },
+
+	{ "045-v1.v1",    0x200000, 0x37f78a9b, 5 | BRF_SND },
+	{ "045-v2.v2",    0x200000, 0x568b20cf, 5 | BRF_SND },
+};
+
+STDROMPICKEXT(samshobt, samshobt, neogeo)
+STD_ROM_FN(samshobt)
+
+struct BurnDriver BurnDrvsamshobt = {
+	"samshobt", "samsho", "neogeo", NULL, "1993",
+	"Samurai Shodown / Samurai Spirits (Boss Hack)\0", NULL, "hack", "Neo Geo MVS",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_SAMSHO,
+	NULL, samshobtRomInfo, samshobtRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 320, 224, 4, 3
+};
+
+// Samurai Shodown III / Samurai Spirits - Zankurou Musouken (Boss Hack)
+// GOTVG 侍魂3 BOSS版
+// samsho3eh in HBMAME.
+
+static struct BurnRomInfo samsho3btRomDesc[] = {
+	{ "087-p1.bin",  0x100000, 0x251d9b3f, 1 | BRF_ESS | BRF_PRG },
+	{ "087-p2.bin",  0x200000, 0x9bbe27e0, 1 | BRF_ESS | BRF_PRG },
+
+	{ "087-s1.s1",    0x020000, 0x74ec7d9f, 2 | BRF_GRA },
+
+	{ "087-c1.c1",    0x400000, 0x07a233bc, 3 | BRF_GRA },
+	{ "087-c2.c2",    0x400000, 0x7a413592, 3 | BRF_GRA },
+	{ "087-c3.c3",    0x400000, 0x8b793796, 3 | BRF_GRA },
+	{ "087-c4.c4",    0x400000, 0x728fbf11, 3 | BRF_GRA },
+	{ "087-c5.c5",    0x400000, 0x172ab180, 3 | BRF_GRA },
+	{ "087-c6.c6",    0x400000, 0x002ff8f3, 3 | BRF_GRA },
+	{ "087-c7.c7",    0x100000, 0xae450e3d, 3 | BRF_GRA },
+	{ "087-c8.c8",    0x100000, 0xa9e82717, 3 | BRF_GRA },
+
+	{ "087-m1.m1",    0x020000, 0x8e6440eb, 4 | BRF_ESS | BRF_PRG },
+
+	{ "087-v1.v1",    0x400000, 0x84bdd9a0, 5 | BRF_SND },
+	{ "087-v2.v2",    0x200000, 0xac0f261a, 5 | BRF_SND },
+};
+
+STDROMPICKEXT(samsho3bt, samsho3bt, neogeo)
+STD_ROM_FN(samsho3bt)
+
+struct BurnDriver BurnDrvsamsho3bt = {
+	"samsho3bt", "samsho3", "neogeo", NULL, "1995",
+	"Samurai Shodown III / Samurai Spirits - Zankurou Musouken (Boss Hack)\0", NULL, "SNK", "Neo Geo MVS",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO,  GBF_VSFIGHT, FBF_SAMSHO,
+	NULL, samsho3btRomInfo, samsho3btRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 304, 224, 4, 3
+};
+
+// Samurai Shodown IV - Amakusa's Revenge / Samurai Spirits - Amakusa Kourin (Boss Hack)
+// GOTVG 侍魂4 BOSS版
+
+static struct BurnRomInfo samsho4btRomDesc[] = {
+	{ "222bt-p1.rom", 0x100000, 0xc26bcb81, 1 | BRF_ESS | BRF_PRG },
+	{ "222-p2.sp2",   0x400000, 0xb023cd8b, 1 | BRF_ESS | BRF_PRG },
+
+	{ "222bt-s1.rom", 0x020000, 0xd0906101, 2 | BRF_GRA },
+
+	{ "222-c1.c1",    0x400000, 0x68f2ed95, 3 | BRF_GRA },
+	{ "222-c2.c2",    0x400000, 0xa6e9aff0, 3 | BRF_GRA },
+	{ "222-c3.c3",    0x400000, 0xc91b40f4, 3 | BRF_GRA },
+	{ "222-c4.c4",    0x400000, 0x359510a4, 3 | BRF_GRA },
+	{ "222-c5.c5",    0x400000, 0x9cfbb22d, 3 | BRF_GRA },
+	{ "222-c6.c6",    0x400000, 0x685efc32, 3 | BRF_GRA },
+	{ "222-c7.c7",    0x400000, 0xd0f86f0d, 3 | BRF_GRA },
+	{ "222-c8.c8",    0x400000, 0xadfc50e3, 3 | BRF_GRA },
+
+	{ "222-m1.m1",    0x020000, 0x7615bc1b, 4 | BRF_ESS | BRF_PRG },
+
+	{ "222-v1.v1",    0x400000, 0x7d6ba95f, 5 | BRF_SND },
+	{ "222-v2.v2",    0x400000, 0x6c33bb5d, 5 | BRF_SND },
+	{ "222-v3.v3",    0x200000, 0x831ea8c0, 5 | BRF_SND },
+};
+
+STDROMPICKEXT(samsho4bt, samsho4bt, neogeo)
+STD_ROM_FN(samsho4bt)
+
+struct BurnDriver BurnDrvsamsho4bt = {
+	"samsho4bt", "samsho4", "neogeo", NULL, "1996",
+	"Samurai Shodown IV - Amakusa's Revenge / Samurai Spirits - Amakusa Kourin (Boss Hack)\0", NULL, "hack", "Neo Geo MVS",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_SAMSHO,
+	NULL, samsho4btRomInfo, samsho4btRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 320, 224, 4, 3
+};
+
+// Samurai Shodown V / Samurai Spirits Zero (Boss Hack)
+// GOTVG 侍魂5 BOSS版
+
+static struct BurnRomInfo samsho5btRomDesc[] = {
+	{ "270-p1.bin",   0x800000, 0x4a2a09e6, 1 | BRF_ESS | BRF_PRG },
+	
+	{ "270-s1.bin", 0x020000, 0xcd025baa, 2 | BRF_GRA },
+
+	{ "ssv-c1d.bin", 0x800000, 0x4e7bdea1, 3 | BRF_GRA },
+	{ "ssv-c2d.bin", 0x800000, 0x7b444985, 3 | BRF_GRA },
+	{ "ssv-c3d.bin", 0x800000, 0x8c709a9b, 3 | BRF_GRA },
+	{ "ssv-c4d.bin", 0x800000, 0xcfd53f5c, 3 | BRF_GRA },
+	{ "ssv-c5d.bin", 0x800000, 0xc026d318, 3 | BRF_GRA },
+	{ "ssv-c6d.bin", 0x800000, 0xb3d9d204, 3 | BRF_GRA },
+	{ "ssv-c7d.bin", 0x800000, 0xfe03a025, 3 | BRF_GRA },
+	{ "ssv-c8d.bin", 0x800000, 0x89db2d34, 3 | BRF_GRA },
+
+	{ "ssv-m1.bin",  0x020000, 0x18114fb1, 4 | BRF_ESS | BRF_PRG },
+
+	{ "ssv-v1d.bin", 0x400000, 0x6849136c, 5 | BRF_SND },
+	{ "ssv-v2d.bin", 0x400000, 0x222e1774, 5 | BRF_SND },
+	{ "ssv-v3d.bin", 0x400000, 0xcd9e7adc, 5 | BRF_SND },
+	{ "ssv-v4d.bin", 0x400000, 0x8b305cac, 5 | BRF_SND },
+};
+
+STDROMPICKEXT(samsho5bt, samsho5bt, neogeo)
+STD_ROM_FN(samsho5bt)
+
+struct BurnDriver BurnDrvsamsho5bt = {
+	"samsho5bt", "samsho5", "neogeo", NULL, "2003",
+	"Samurai Shodown V / Samurai Spirits Zero (Boss Hack)\0", NULL, "hack", "Neo Geo MVS",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_SAMSHO,
+	NULL, samsho5btRomInfo, samsho5btRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000,	304, 224, 4, 3
+};
+
+// The Last Blade / Bakumatsu Roman - Gekka no Kenshi (Moves Simplified 20130307)
+/* GOTVG 月华剑士系列(1代简化版) */
+
+static struct BurnRomInfo lastbladjhRomDesc[] = {
+	{ "234-pg1.bin",  0x100000, 0xfb81e7fa, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "234-p2.sp2",   0x400000, 0x0fdc289e, 1 | BRF_ESS | BRF_PRG }, //  1 
+
+	{ "234-s1.s1",    0x020000, 0x95561412, 2 | BRF_GRA },           //  2 Text layer tiles
+
+	{ "234-c1.c1",    0x800000, 0x9f7e2bd3, 3 | BRF_GRA },           //  3 Sprite data
+	{ "234-c2.c2",    0x800000, 0x80623d3c, 3 | BRF_GRA },           //  4 
+	{ "234-c3.c3",    0x800000, 0x91ab1a30, 3 | BRF_GRA },           //  5 
+	{ "234-c4.c4",    0x800000, 0x3d60b037, 3 | BRF_GRA },           //  6 
+	{ "234-c5.c5",    0x400000, 0x1ba80cee, 3 | BRF_GRA },           //  7 
+	{ "234-c6.c6",    0x400000, 0xbeafd091, 3 | BRF_GRA },           //  8 
+
+	{ "234-m1.m1",    0x020000, 0x087628ea, 4 | BRF_ESS | BRF_PRG }, //  9 Z80 code
+
+	{ "234-v1.v1",    0x400000, 0xed66b76f, 5 | BRF_SND },           // 10 Sound data
+	{ "234-v2.v2",    0x400000, 0xa0e7f6e2, 5 | BRF_SND },           // 11 
+	{ "234-v3.v3",    0x400000, 0xa506e1e2, 5 | BRF_SND },           // 12 
+	{ "234-v4.v4",    0x400000, 0x0e34157f, 5 | BRF_SND },           // 13 
+};
+
+STDROMPICKEXT(lastbladjh, lastbladjh, neogeo)
+STD_ROM_FN(lastbladjh)
+
+struct BurnDriver BurnDrvlastbladjh = {
+	"lastbladjh", "lastblad", "neogeo", NULL, "1997",
+	"The Last Blade / Bakumatsu Roman - Gekka no Kenshi (Moves Simplified 20130307)\0", NULL, "hack", "Neo Geo AES",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, 0,
+	NULL, lastbladjhRomInfo, lastbladjhRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 320, 224, 4, 3
+};
+
+// The Last Blade / Bakumatsu Roman - Gekka no Kenshi (Plus 20140112)
+/* GOTVG 月华剑士系列(1代PLUS) */
+// lastbladhs07 in HBMAME.
+static struct BurnRomInfo lastbladpRomDesc[] = {
+	{ "234-p1.dec",  0x100000, 0x340cee5e, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "234-p2.dec",  0x400000, 0xd04b0617, 1 | BRF_ESS | BRF_PRG }, //  1 
+
+	{ "234-s1.s1",    0x020000, 0x95561412, 2 | BRF_GRA },           //  2 Text layer tiles
+
+	{ "234-c1.c1",    0x800000, 0x9f7e2bd3, 3 | BRF_GRA },           //  3 Sprite data
+	{ "234-c2.c2",    0x800000, 0x80623d3c, 3 | BRF_GRA },           //  4 
+	{ "234-c3.c3",    0x800000, 0x91ab1a30, 3 | BRF_GRA },           //  5 
+	{ "234-c4.c4",    0x800000, 0x3d60b037, 3 | BRF_GRA },           //  6 
+	{ "234-c5.c5",    0x400000, 0x1ba80cee, 3 | BRF_GRA },           //  7 
+	{ "234-c6.c6",    0x400000, 0xbeafd091, 3 | BRF_GRA },           //  8 
+
+	{ "234-m1.m1",    0x020000, 0x087628ea, 4 | BRF_ESS | BRF_PRG }, //  9 Z80 code
+
+	{ "234-v1.v1",    0x400000, 0xed66b76f, 5 | BRF_SND },           // 10 Sound data
+	{ "234-v2.v2",    0x400000, 0xa0e7f6e2, 5 | BRF_SND },           // 11 
+	{ "234-v3.v3",    0x400000, 0xa506e1e2, 5 | BRF_SND },           // 12 
+	{ "234-v4.v4",    0x400000, 0x0e34157f, 5 | BRF_SND },           // 13 
+};
+
+STDROMPICKEXT(lastbladp, lastbladp, neogeo)
+STD_ROM_FN(lastbladp)
+
+struct BurnDriver BurnDrvlastbladp = {
+	"lastbladp", "lastblad", "neogeo", NULL, "1997",
+	"The Last Blade / Bakumatsu Roman - Gekka no Kenshi (Plus 20140112)\0", NULL, "hack", "Neo Geo AES",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, 0,
+	NULL, lastbladpRomInfo, lastbladpRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 320, 224, 4, 3
+};
+
+// The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (Moves Simplified 20130309)
+/* GOTVG 月华剑士系列(2代简化版) */
+
+static struct BurnRomInfo lastbld2jhRomDesc[] = {
+	{ "243-pg1.bin",  0x100000, 0x7f695c3b, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "243-pg2.sp2",  0x400000, 0xadd4a30b, 1 | BRF_ESS | BRF_PRG }, //  1 
+
+	{ "243-s1.s1",    0x020000, 0xc9cd2298, 2 | BRF_GRA },           //  2 Text layer tiles
+
+	{ "243-c1.c1",    0x800000, 0x5839444d, 3 | BRF_GRA },           //  3 Sprite data
+	{ "243-c2.c2",    0x800000, 0xdd087428, 3 | BRF_GRA },           //  4 
+	{ "243-c3.c3",    0x800000, 0x6054cbe0, 3 | BRF_GRA },           //  5 
+	{ "243-c4.c4",    0x800000, 0x8bd2a9d2, 3 | BRF_GRA },           //  6 
+	{ "243-c5.c5",    0x800000, 0x6a503dcf, 3 | BRF_GRA },           //  7 
+	{ "243-c6.c6",    0x800000, 0xec9c36d0, 3 | BRF_GRA },           //  8 
+
+	{ "243-m1.m1",    0x020000, 0xacf12d10, 4 | BRF_ESS | BRF_PRG }, //  9 Z80 code
+
+	{ "243-v1.v1",    0x400000, 0xf7ee6fbb, 5 | BRF_SND },           // 10 Sound data
+	{ "243-v2.v2",    0x400000, 0xaa9e4df6, 5 | BRF_SND },           // 11 
+	{ "243-v3.v3",    0x400000, 0x4ac750b2, 5 | BRF_SND },           // 12 
+	{ "243-v4.v4",    0x400000, 0xf5c64ba6, 5 | BRF_SND },           // 13 
+};
+
+STDROMPICKEXT(lastbld2jh, lastbld2jh, neogeo)
+STD_ROM_FN(lastbld2jh)
+
+struct BurnDriver BurnDrvlastbld2jh = {
+	"lastbld2jh", "lastbld2", "neogeo", NULL, "2013",
+	"The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (Moves Simplified 20130309)\0", NULL, "SNK", "Neo Geo MVS",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, 0,
+	NULL, lastbld2jhRomInfo, lastbld2jhRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 320, 224, 4, 3
+};
+
+// The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (Plus 20140409)
+/* GOTVG 月华剑士系列(2代PLUS) */
+
+static struct BurnRomInfo lastbld2fRomDesc[] = {
+	{ "243-p1.dec",  0x100000, 0xa401fe4e, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "243-p2.dec",  0x400000, 0x52b3f468, 1 | BRF_ESS | BRF_PRG }, //  1 
+
+	{ "243-s1.s1",    0x020000, 0xc9cd2298, 2 | BRF_GRA },           //  2 Text layer tiles
+
+	{ "243-c1.c1",    0x800000, 0x5839444d, 3 | BRF_GRA },           //  3 Sprite data
+	{ "243-c2.c2",    0x800000, 0xdd087428, 3 | BRF_GRA },           //  4 
+	{ "243-c3.c3",    0x800000, 0x6054cbe0, 3 | BRF_GRA },           //  5 
+	{ "243-c4.c4",    0x800000, 0x8bd2a9d2, 3 | BRF_GRA },           //  6 
+	{ "243-c5.c5",    0x800000, 0x6a503dcf, 3 | BRF_GRA },           //  7 
+	{ "243-c6.c6",    0x800000, 0xec9c36d0, 3 | BRF_GRA },           //  8 
+
+	{ "243-m1.m1",    0x020000, 0xacf12d10, 4 | BRF_ESS | BRF_PRG }, //  9 Z80 code
+
+	{ "243-v1.v1",    0x400000, 0xf7ee6fbb, 5 | BRF_SND },           // 10 Sound data
+	{ "243-v2.v2",    0x400000, 0xaa9e4df6, 5 | BRF_SND },           // 11 
+	{ "243-v3.v3",    0x400000, 0x4ac750b2, 5 | BRF_SND },           // 12 
+	{ "243-v4.v4",    0x400000, 0xf5c64ba6, 5 | BRF_SND },           // 13 
+};
+
+STDROMPICKEXT(lastbld2f, lastbld2f, neogeo)
+STD_ROM_FN(lastbld2f)
+
+struct BurnDriver BurnDrvlastbld2f = {
+	"lastbld2f", "lastbld2", "neogeo", NULL, "2014",
+	"The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (Plus 20140409)\0", NULL, "SNK", "Neo Geo MVS",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, 0,
+	NULL, lastbld2fRomInfo, lastbld2fRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 320, 224, 4, 3
+};
+
+// The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (Team Edition 20150913)
+/* GOTVG 月华剑士系列(2代TEAM EDITION) */
+// lb2te in HBMAME.
+static struct BurnRomInfo lastbld21v3RomDesc[] = {
+	{ "243-p1.bin",  0x100000, 0x8f9a24bf, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "243-p2.bin",  0x400000, 0x37aaffa0, 1 | BRF_ESS | BRF_PRG }, //  1 
+
+	{ "243-s1.s1",    0x020000, 0xc9cd2298, 2 | BRF_GRA },           //  2 Text layer tiles
+
+	{ "243-c1.c1",    0x800000, 0x5839444d, 3 | BRF_GRA },           //  3 Sprite data
+	{ "243-c2.c2",    0x800000, 0xdd087428, 3 | BRF_GRA },           //  4 
+	{ "243-c3.c3",    0x800000, 0x6054cbe0, 3 | BRF_GRA },           //  5 
+	{ "243-c4.c4",    0x800000, 0x8bd2a9d2, 3 | BRF_GRA },           //  6 
+	{ "243-c5.c5",    0x800000, 0x6a503dcf, 3 | BRF_GRA },           //  7 
+	{ "243-c6.c6",    0x800000, 0xec9c36d0, 3 | BRF_GRA },           //  8 
+
+	{ "243-m1.m1",    0x020000, 0xacf12d10, 4 | BRF_ESS | BRF_PRG }, //  9 Z80 code
+
+	{ "243-v1.v1",    0x400000, 0xf7ee6fbb, 5 | BRF_SND },           // 10 Sound data
+	{ "243-v2.v2",    0x400000, 0xaa9e4df6, 5 | BRF_SND },           // 11 
+	{ "243-v3.v3",    0x400000, 0x4ac750b2, 5 | BRF_SND },           // 12 
+	{ "243-v4.v4",    0x400000, 0xf5c64ba6, 5 | BRF_SND },           // 13 
+};
+
+STDROMPICKEXT(lastbld21v3, lastbld21v3, neogeo)
+STD_ROM_FN(lastbld21v3)
+
+struct BurnDriver BurnDrvlastbld21v3 = {
+	"lastbld21v3", "lastbld2", "neogeo", NULL, "2015",
+	"The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (Team Edition 20150913)\0", NULL, "SNK", "Neo Geo MVS",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, 0,
+	NULL, lastbld21v3RomInfo, lastbld21v3RomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 320, 224, 4, 3
+};
