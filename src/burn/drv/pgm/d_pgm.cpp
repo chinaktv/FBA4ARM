@@ -5886,7 +5886,7 @@ STD_ROM_FN(kov8)
 
 struct BurnDriver BurnDrvkov8 = {
 	"kov8", "kovplus", "pgm", NULL, "2017",
-	"Knights of Valour Plus (1VS8 20170218)\0", "Not working!", "hack", "PolyGameMaster",
+	"Knights of Valour Plus (1VS8 20170218)\0", NULL, "hack", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
 	NULL, kov8RomInfo, kov8RomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
