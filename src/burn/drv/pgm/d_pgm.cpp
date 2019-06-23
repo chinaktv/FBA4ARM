@@ -5894,6 +5894,7 @@ struct BurnDriver BurnDrvkov8 = {
 	448, 224, 4, 3
 };
 
+/* Replaced with new ROM sets.
 // FBA4DROID 三国战纪 正宗FENG 小兵争霸 Knights of Valour Plus (Small Soldiers Fighting for Hegemony 20181206)
 static struct BurnRomInfo kovplusxb1RomDesc[] = {
 	{ "p0600xb.119",       		0x400000, 0x9935b99c, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
@@ -5920,7 +5921,7 @@ struct BurnDriver BurnDrvkovplusxb1 = {
 	"kovplusxb1", "kovplus", "pgm", NULL, "2018",
 	"Knights of Valour Plus (Small Soldiers Fighting for Hegemony 20181206)\0", NULL, "IGS", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM, GBF_SCRFIGHT, 0,
 	NULL, kovplusxb1RomInfo, kovplusxb1RomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
 	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
@@ -5952,11 +5953,12 @@ struct BurnDriver BurnDrvkovplusxb2 = {
 	"kovplusxb2", "kovplus", "pgm", NULL, "2018",
 	"Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 20181206)\0", NULL, "IGS", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM, GBF_SCRFIGHT, 0,
 	NULL, kovplusxb2RomInfo, kovplusxb2RomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
 	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
 };
+*/
 
 // FBA4DROID 三国战纪 正宗FENG 小兵争霸2 大神版 Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 - Manito 20181207)
 static struct BurnRomInfo kovplusxb2dsRomDesc[] = {
@@ -6563,6 +6565,610 @@ struct BurnDriver BurnDrvkovcxzz = {
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
 	NULL, kovcxzzRomInfo, kovcxzzRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// GOTVG 三国战纪 正宗2012
+// Knights of Valour Plus (2012 20150616)
+// In order to reduce clones' size, I made it as a parent ROM.
+static struct BurnRomInfo kovplus2012RomDesc[] = {
+	{ "new_kovplus2012.119", 0x400000, 0xab7b59c5, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  3
+	{ "a0602.rom",     		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  4
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },			//  5
+	
+	{ "b0600.rom",     		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			//  7
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  8 Samples
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovplus2012, kovplus2012, pgm)
+STD_ROM_FN(kovplus2012)
+
+struct BurnDriver BurnDrvkovplus2012 = {
+	"kovplus2012", NULL, "pgm", NULL, "2015",
+	"Knights of Valour Plus (2012 20150616)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kovplus2012RomInfo, kovplus2012RomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// GOTVG 三国战纪 正宗Plus 1V4版
+// Knights of Valour Plus (1VS4 20180130)
+static struct BurnRomInfo kovplus1v4RomDesc[] = {
+	{ "new_kovplus1v4.119", 0x400000, 0x2a74a11d, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  3
+	{ "a0602.rom",     		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  4
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },			//  5
+	
+	{ "b0600.rom",     		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			//  7
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  8 Samples
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovplus1v4, kovplus1v4, pgm)
+STD_ROM_FN(kovplus1v4)
+
+struct BurnDriver BurnDrvkovplus1v4 = {
+	"kovplus1v4", "kovplus2012", "pgm", NULL, "2018",
+	"Knights of Valour Plus (1VS4 20180130)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kovplus1v4RomInfo, kovplus1v4RomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// GOTVG 三国战纪 正宗Plus 加强版
+// Knights of Valour Plus (Plus 20180202)
+static struct BurnRomInfo kovplusjqRomDesc[] = {
+	{ "new_kovplusjq.119",  0x400000, 0xd31ca6ca, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  3
+	{ "a0602.rom",     		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  4
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },			//  5
+	
+	{ "b0600.rom",     		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			//  7
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  8 Samples
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovplusjq, kovplusjq, pgm)
+STD_ROM_FN(kovplusjq)
+
+struct BurnDriver BurnDrvkovplusjq = {
+	"kovplusjq", "kovplus2012", "pgm", NULL, "2018",
+	"Knights of Valour Plus (Plus 20180202)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kovplusjqRomInfo, kovplusjqRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// GOTVG 三国战纪 正宗Plus 荼蘼之梦
+// Knights of Valour Plus (Dream of Tu Mi 20180305)
+// 缺t0600.rom解密档.
+// t0600.rom is not ripped from GOTVG, use one from kovplus.
+static struct BurnRomInfo kovsgyyRomDesc[] = {
+	{ "new_kovsgyy.119",    0x400000, 0x10984e1d, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  3
+	{ "a0602.rom",     		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  4
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },			//  5
+	
+	{ "b0600.rom",     		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			//  7
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  8 Samples
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovsgyy, kovsgyy, pgm)
+STD_ROM_FN(kovsgyy)
+
+struct BurnDriver BurnDrvkovsgyy = {
+	"kovsgyy", "kovplus2012", "pgm", NULL, "2018",
+	"Knights of Valour Plus (Dream of Tu Mi 20180305)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kovsgyyRomInfo, kovsgyyRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// GOTVG 三国战纪 正宗Plus 双儿之梦
+// Knights of Valour Plus (Dream of Shuang Er 20180109)
+static struct BurnRomInfo kovpluspjzmRomDesc[] = {
+	{ "new_kovpluspjzm.119", 0x400000, 0x9825528d, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  3
+	{ "a0602.rom",     		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  4
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },			//  5
+	
+	{ "b0600.rom",     		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			//  7
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  8 Samples
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovpluspjzm, kovpluspjzm, pgm)
+STD_ROM_FN(kovpluspjzm)
+
+struct BurnDriver BurnDrvkovpluspjzm = {
+	"kovpluspjzm", "kovplus2012", "pgm", NULL, "2018",
+	"Knights of Valour Plus (Dream of Shuang Er 20180109)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kovpluspjzmRomInfo, kovpluspjzmRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// GOTVG 三国战纪 正宗Plus 举世无双
+// Knights of Valour Plus (Unrivalled in the World 20160913)
+static struct BurnRomInfo kov100sRomDesc[] = {
+	{ "new_kov100s.119",    0x400000, 0xb26d7710, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  3
+	{ "a0602.rom",     		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  4
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },			//  5
+	
+	{ "b0600.rom",     		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			//  7
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  8 Samples
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kov100s, kov100s, pgm)
+STD_ROM_FN(kov100s)
+
+struct BurnDriver BurnDrvkov100s = {
+	"kov100s", "kovplus2012", "pgm", NULL, "2016",
+	"Knights of Valour Plus (Unrivalled in the World 20160913)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kov100sRomInfo, kov100sRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// GOTVG 三国战纪 正宗Plus 荼蘼传说
+// Knights of Valour Plus (Legend of Tu Mi 20180505)
+// 缺b0601.rom、a0602.rom解密档.
+// b0601.rom & a0602.rom are not ripped from GOTVG, use files from kovplus instead.
+static struct BurnRomInfo kovtmcsRomDesc[] = {
+	{ "new_kovtmcs.119",    0x400000, 0xd1ea3de4, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  3
+	{ "a0602.rom",     		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  4
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },			//  5
+	
+	{ "b0600.rom",     		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			//  7
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  8 Samples
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovtmcs, kovtmcs, pgm)
+STD_ROM_FN(kovtmcs)
+
+struct BurnDriver BurnDrvkovtmcs = {
+	"kovtmcs", "kovplus2012", "pgm", NULL, "2018",
+	"Knights of Valour Plus (Legend of Tu Mi 20180505)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kovtmcsRomInfo, kovtmcsRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// GOTVG 三国战纪 正宗Plus 无限能量版
+// Knights of Valour Plus (Infinite Power 20190226)
+static struct BurnRomInfo kov117maxRomDesc[] = {
+	{ "new_kov117max.119",  0x400000, 0x33fd49c7, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  3
+	{ "a0602.rom",     		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  4
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },			//  5
+	
+	{ "b0600.rom",     		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			//  7
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  8 Samples
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kov117max, kov117max, pgm)
+STD_ROM_FN(kov117max)
+
+struct BurnDriver BurnDrvkov117max = {
+	"kov117max", "kovplus2012", "pgm", NULL, "2019",
+	"Knights of Valour Plus (Infinite Power 20190226)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kov117maxRomInfo, kov117maxRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// GOTVG 三国战纪 正宗2012 无双经典版
+// Knights of Valour Plus 2012 (Classic Unrivalled Version 20160125)
+// 缺a0602.rom和b0601.rom。
+static struct BurnRomInfo kovplus2012dRomDesc[] = {
+	{ "new_kovplus2012d.119",  0x400000, 0x4403c58b, 1 | BRF_PRG | BRF_ESS },
+
+	{ "t0600.rom",     		0x800000, 0x842b7711, 2 | BRF_GRA }, // Same as kovplus2012dw.
+	
+	{ "a0600.rom",     		0x800000, 0x5bd7ea9f, 3 | BRF_GRA }, // Same as kovplus2012dw.
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },
+	{ "a0602.rom",     		0x800000, 0xaf2c086d, 3 | BRF_GRA }, // Not ripped, use file from kovplus2012dw.
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },
+	
+	{ "b0600.rom",     		0x800000, 0x07d91ea3, 4 | BRF_GRA }, // Same as kovplus2012dw.
+	{ "b0601.rom",     		0x400000, 0x4ce7b2b8, 4 | BRF_GRA }, // Not ripped, use file from kovplus2012dw.
+	
+	{ "m0600.rom",     		0x400000, 0x7a50501b, 5 | BRF_SND }, // Same as kovplus2012dw.
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },
+};
+
+STDROMPICKEXT(kovplus2012d, kovplus2012d, pgm)
+STD_ROM_FN(kovplus2012d)
+
+struct BurnDriver BurnDrvkovplus2012d = {
+	"kovplus2012d", "kovplus2012", "pgm", NULL, "2016",
+	"Knights of Valour Plus 2012 (Classic Unrivalled Version 20160125)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kovplus2012dRomInfo, kovplus2012dRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// GOTVG 三国战纪 正宗2012 2007版
+// Knights of Valour Plus 2012 (2007 20150616)
+static struct BurnRomInfo kovplus2007RomDesc[] = {
+	{ "new_kovplus2007.119",  0x400000, 0xb2ee0885, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  3
+	{ "a0602.rom",     		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  4
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },			//  5
+	
+	{ "b0600.rom",     		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			//  7
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  8 Samples
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovplus2007, kovplus2007, pgm)
+STD_ROM_FN(kovplus2007)
+
+struct BurnDriver BurnDrvkovplus2007 = {
+	"kovplus2007", "kovplus2012", "pgm", NULL, "2015",
+	"Knights of Valour Plus 2012 (2007 20150616)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kovplus2007RomInfo, kovplus2007RomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// GOTVG 三国战纪 正宗2012 小兵版
+// Knights of Valour Plus 2012 (Ordinary Soldiers 20181225)
+// Updated version.
+static struct BurnRomInfo kovplusxbRomDesc[] = {
+	{ "new_kovplusxb.119",  0x400000, 0xf8cd3baa, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  3
+	{ "a0602.rom",     		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  4
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },			//  5
+	
+	{ "b0600.rom",     		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			//  7
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  8 Samples
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovplusxb, kovplusxb, pgm)
+STD_ROM_FN(kovplusxb)
+
+struct BurnDriver BurnDrvkovplusxb = {
+	"kovplusxb", "kovplus2012", "pgm", NULL, "2018",
+	"Knights of Valour Plus 2012 (Ordinary Soldiers 20181225)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kovplusxbRomInfo, kovplusxbRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// GOTVG 三国战纪 正宗2012 小兵版2
+// Knights of Valour Plus 2012 (Ordinary Soldiers 2 20181225)
+// Updated version.
+static struct BurnRomInfo kovplusxb2RomDesc[] = {
+	{ "new_kovplusxb2.119",  0x400000, 0xc94d20b9, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  3
+	{ "a0602.rom",     		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  4
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },			//  5
+	
+	{ "b0600.rom",     		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			//  7
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  8 Samples
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovplusxb2, kovplusxb2, pgm)
+STD_ROM_FN(kovplusxb2)
+
+struct BurnDriver BurnDrvkovplusxb2 = {
+	"kovplusxb2", "kovplus2012", "pgm", NULL, "2018",
+	"Knights of Valour Plus 2012 (Ordinary Soldiers 2 20181225)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kovplusxb2RomInfo, kovplusxb2RomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// GOTVG 三国战纪 正宗2012 琴双情殇
+// Knights of Valour Plus 2012 (Qin Shuang Qing Shang 20150117)
+// 缺a0602.rom、b0601.rom、t0600.rom。
+static struct BurnRomInfo kovplus2012qsRomDesc[] = {
+	{ "new_kovplus2012qs.119",  0x400000, 0x076c63ee, 1 | BRF_PRG | BRF_ESS },
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA }, // Not ripped, use file from kovplus.
+	
+	{ "a0600.rom",     		0x800000, 0xd8167834, 3 | BRF_GRA },
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },
+	{ "a0602.rom",     		0x800000, 0xe7a32959, 3 | BRF_GRA }, // Not ripped, use file from kovplus.
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },
+	
+	{ "b0600.rom",     		0x800000, 0x7d3cd059, 4 | BRF_GRA },
+	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA }, // Not ripped, use file from kovplus.
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },
+};
+
+STDROMPICKEXT(kovplus2012qs, kovplus2012qs, pgm)
+STD_ROM_FN(kovplus2012qs)
+
+struct BurnDriver BurnDrvkovplus2012qs = {
+	"kovplus2012qs", "kovplus2012", "pgm", NULL, "2015",
+	"Knights of Valour Plus 2012 (Qin Shuang Qing Shang 20150117)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kovplus2012qsRomInfo, kovplus2012qsRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// GOTVG 三国战纪 正宗2012 MISS版
+// Knights of Valour Plus 2012 (Miss 20160302)
+static struct BurnRomInfo kov2012msRomDesc[] = {
+	{ "new_kov2012ms.119",  0x400000, 0xfec5eef0, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  3
+	{ "a0602.rom",     		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  4
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },			//  5
+	
+	{ "b0600.rom",     		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			//  7
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  8 Samples
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kov2012ms, kov2012ms, pgm)
+STD_ROM_FN(kov2012ms)
+
+struct BurnDriver BurnDrvkov2012ms = {
+	"kov2012ms", "kovplus2012", "pgm", NULL, "2016",
+	"Knights of Valour Plus 2012 (Miss 20160302)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kov2012msRomInfo, kov2012msRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// GOTVG 三国战纪 正宗2012 芳月魔雨
+// Knights of Valour Plus 2012 (Fang Yue Mo Yu 20160426)
+static struct BurnRomInfo kov2012fymyRomDesc[] = {
+	{ "new_kov2012fymy.119",  0x400000, 0x85e2fbe8, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  3
+	{ "a0602.rom",     		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  4
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },			//  5
+	
+	{ "b0600.rom",     		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			//  7
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  8 Samples
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kov2012fymy, kov2012fymy, pgm)
+STD_ROM_FN(kov2012fymy)
+
+struct BurnDriver BurnDrvkov2012fymy = {
+	"kov2012fymy", "kovplus2012", "pgm", NULL, "2016",
+	"Knights of Valour Plus 2012 (Fang Yue Mo Yu 20160426)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kov2012fymyRomInfo, kov2012fymyRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// GOTVG 三国战纪 正宗2012 蜀之复兴
+// Knights of Valour Plus 2012 (Rerise of Shu 20160302)
+static struct BurnRomInfo kov2012szfxRomDesc[] = {
+	{ "new_kov2012szfx.119",  0x400000, 0x4aa6737f, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  3
+	{ "a0602.rom",     		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  4
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },			//  5
+	
+	{ "b0600.rom",     		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			//  7
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  8 Samples
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kov2012szfx, kov2012szfx, pgm)
+STD_ROM_FN(kov2012szfx)
+
+struct BurnDriver BurnDrvkov2012szfx = {
+	"kov2012szfx", "kovplus2012", "pgm", NULL, "2016",
+	"Knights of Valour Plus 2012 (Rerise of Shu 20160302)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kov2012szfxRomInfo, kov2012szfxRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// GOTVG 三国战纪 正宗2012 魏吴传
+// Knights of Valour Plus 2012 (Legends of Wei and Wu 20160302)
+static struct BurnRomInfo kov2012wwzRomDesc[] = {
+	{ "new_kov2012wwz.119",  0x400000, 0x5681b066, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  3
+	{ "a0602.rom",     		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  4
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },			//  5
+	
+	{ "b0600.rom",     		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			//  7
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  8 Samples
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kov2012wwz, kov2012wwz, pgm)
+STD_ROM_FN(kov2012wwz)
+
+struct BurnDriver BurnDrvkov2012wwz = {
+	"kov2012wwz", "kovplus2012", "pgm", NULL, "2016",
+	"Knights of Valour Plus 2012 (Legends of Wei and Wu 20160302)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kov2012wwzRomInfo, kov2012wwzRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// GOTVG 三国战纪 正宗2012 王者秒杀
+// Knights of Valour Plus 2012 (Seckilling by King 20160426)
+// kovpluss280 in HBMAME.
+static struct BurnRomInfo kovkingRomDesc[] = {
+	{ "new_kovking.119",  	0x400000, 0x7bd5067e, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },
+	
+	{ "a0600.rom",     		0x800000, 0x3aa14383, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },
+	{ "a0602.rom",     		0x800000, 0xe7a32959, 3 | BRF_GRA },
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },
+	
+	{ "b0600.rom",     		0x800000, 0x8d0b67ea, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },
+};
+
+STDROMPICKEXT(kovking, kovking, pgm)
+STD_ROM_FN(kovking)
+
+struct BurnDriver BurnDrvkovking = {
+	"kovking", "kovplus2012", "pgm", NULL, "2016",
+	"Knights of Valour Plus 2012 (Seckilling by King 20160426)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kovkingRomInfo, kovkingRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
 	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
 };
