@@ -8121,7 +8121,7 @@ struct BurnDriver BurnDrvkovshpms = {
 };
 
 // MAMECN.COM 三国战纪 乱世3拳皇 Knights of Valour Super Heroes Plus (King Of Fighters In Chaos World 3 20190424)
-static struct BurnRomInfo kovassgaRomDesc[] = {
+static struct BurnRomInfo kovassga3RomDesc[] = {
 	{ "p0600h.rom",			0x400000, 0x57a9c53f, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
 	{ "t0600.rom",    		0x800000, 0xa919ec0f, 2 | BRF_GRA },			//  1 Tile data
@@ -8141,15 +8141,15 @@ static struct BurnRomInfo kovassgaRomDesc[] = {
 	{ "kovsh_v100_china.asic", 	0x004000, 0x62d4c604, 7 | BRF_PRG | BRF_ESS },  //  9 Internal ARM7 Rom
 };
 
-STDROMPICKEXT(kovassga, kovassga, pgm)
-STD_ROM_FN(kovassga)
+STDROMPICKEXT(kovassga3, kovassga3, pgm)
+STD_ROM_FN(kovassga3)
 
-struct BurnDriver BurnDrvkovassga = {
-	"kovassga", "kovshp", "pgm", NULL, "2019",
+struct BurnDriver BurnDrvkovassga3 = {
+	"kovassga3", "kovshp", "pgm", NULL, "2019",
 	"Knights of Valour Super Heroes Plus (King Of Fighters In Chaos World 3 20190424)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
-	NULL, kovassgaRomInfo, kovassgaRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	NULL, kovassga3RomInfo, kovassga3RomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
 	kovshpInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
 };
