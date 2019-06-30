@@ -1079,7 +1079,7 @@ STDINPUTINFO(Sf2ceuabl)
 
 static struct BurnInputInfo SfzchInputList[] =
 {
-	{"P1 Pause"         , BIT_DIGITAL  , CpsInp018+2, ""          },
+	{"P1 Pause"         , BIT_DIGITAL  , CpsInp018+2, "p1 coin"   },
  	{"P1 Start"         , BIT_DIGITAL  , CpsInp018+4, "p1 start"  },
  	{"P1 Up"            , BIT_DIGITAL  , CpsInp001+3, "p1 up"     },
  	{"P1 Down"          , BIT_DIGITAL  , CpsInp001+2, "p1 down"   },
@@ -1092,7 +1092,7 @@ static struct BurnInputInfo SfzchInputList[] =
  	{"P1 Medium Kick"   , BIT_DIGITAL  , CpsInp018+0, "p1 fire 5" },
  	{"P1 Strong Kick"   , BIT_DIGITAL  , CpsInp018+6, "p1 fire 6" },
 
- 	{"P2 Pause"         , BIT_DIGITAL  , CpsInp018+3, ""          },
+ 	{"P2 Pause"         , BIT_DIGITAL  , CpsInp018+3, "p2 coin"   },
  	{"P2 Start"         , BIT_DIGITAL  , CpsInp018+5, "p2 start"  },
  	{"P2 Up"            , BIT_DIGITAL  , CpsInp000+3, "p2 up"     },
  	{"P2 Down"          , BIT_DIGITAL  , CpsInp000+2, "p2 down"   },
@@ -1327,6 +1327,7 @@ STDINPUTINFO(Wof)
 
 static struct BurnInputInfo WofchInputList[] =
 {
+	{"P1 Pause"         , BIT_DIGITAL  , CpsInp018+2, "p1 coin"   },
  	{"P1 Start"         , BIT_DIGITAL  , CpsInp018+4, "p1 start"  },
  	{"P1 Up"            , BIT_DIGITAL  , CpsInp001+3, "p1 up"     },
  	{"P1 Down"          , BIT_DIGITAL  , CpsInp001+2, "p1 down"   },
@@ -1336,7 +1337,8 @@ static struct BurnInputInfo WofchInputList[] =
  	{"P1 Jump"          , BIT_DIGITAL  , CpsInp001+5, "p1 fire 2" },
  	{"P1 Fire"          , BIT_DIGITAL  , CpsInp001+6, "p1 fire 3" },
 
- 	{"P2 Start"         , BIT_DIGITAL  , CpsInp018+5, "p2 start"  },
+ 	{"P2 Pause"         , BIT_DIGITAL  , CpsInp018+3, "p2 coin"   },
+	{"P2 Start"         , BIT_DIGITAL  , CpsInp018+5, "p2 start"  },
  	{"P2 Up"            , BIT_DIGITAL  , CpsInp000+3, "p2 up"     },
  	{"P2 Down"          , BIT_DIGITAL  , CpsInp000+2, "p2 down"   },
  	{"P2 Left"          , BIT_DIGITAL  , CpsInp000+1, "p2 left"   },
@@ -14411,6 +14413,7 @@ static const struct GameConfig ConfigTable[] =
 	{ "wonder3up"    , CPS_B_21_BT1, mapper_RT24B , 0, NULL                },
 	{ "dinoqmgw"     , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
 	{ "dinozszn"     , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
+	{ "dinoqwb"      , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
 	{ "punisherbsa"  , CPS_B_21_QS3, mapper_PS63B , 0, punisher_decode     },
 	{ "punisherbzp"  , CPS_B_21_DEF, mapper_PS63B , 0, NULL                },
 	{ "punisherkd"   , CPS_B_21_QS3, mapper_PS63B , 0, punisher_decode     },
@@ -21577,7 +21580,7 @@ struct BurnDriver BurnDrvCpsWofchdx = {
 	"Sangokushi III Gaiden: Kakou-On's Revenge DX (hack)\0", NULL, "Capcom", "CPS Changer",
 	L"\u4E09\u56FD\u5FD7 III \u5916\u4F20: \u590F\u4FAF\u6069\u7684\u590D\u4EC7\0Sangokushi III Gaiden: Kakou-On's Revenge DX (hack)\0", NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 3, HARDWARE_CAPCOM_CPSCHANGER, GBF_SCRFIGHT, 0,
-	NULL, WofchdxRomInfo, WofchdxRomName, NULL, NULL, NULL, NULL, WofInputInfo, NULL,
+	NULL, WofchdxRomInfo, WofchdxRomName, NULL, NULL, NULL, NULL, WofchInputInfo, NULL,
 	WofchInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
@@ -24289,7 +24292,7 @@ STD_ROM_FN(dinoqmgw)
 
 struct BurnDriver BurnDrvCpsdinoqmgw = {
 	"dinoqmgw", "dino", NULL, NULL, "2019",
-	"Cadillacs & Dinosaurs (Rampage of Devils 2019 20190523)\0", NULL, "Capcom", "CPS1 / QSound",
+	"Cadillacs & Dinosaurs (Rampage of Devils 2019 20190523)\0", NULL, "hack", "CPS1 / QSound",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
 	NULL, dinoqmgwRomInfo, dinoqmgwRomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
@@ -24325,10 +24328,46 @@ STD_ROM_FN(dinozszn)
 
 struct BurnDriver BurnDrvCpsdinozszn = {
 	"dinozszn", "dino", NULL, NULL, "2019",
-	"Cadillacs & Dinosaurs (Anger of Warlord 2019 20190519)\0", NULL, "Capcom", "CPS1 / QSound",
+	"Cadillacs & Dinosaurs (Anger of Warlord 2019 20190519)\0", NULL, "hack", "CPS1 / QSound",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
 	NULL, dinozsznRomInfo, dinozsznRomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// FBA4DROID 恐龙新世纪 枪王版  Cadillacs & Dinosaurs (King of Gunners 20190519)
+static struct BurnRomInfo dinoqwbRomDesc[] = {
+	{ "23.rom",    0x080000, 0x3e45cace, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "22.rom",    0x080000, 0xfa8a51fd, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "21.rom",    0x080000, 0x182d2411, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	
+	{ "cd-1m.3a",      0x080000, 0x8da4f917, BRF_GRA | CPS1_TILES },
+	{ "cd-3m.5a",      0x080000, 0x6c40f603, BRF_GRA | CPS1_TILES },
+	{ "cd-2m.4a",      0x080000, 0x09c8fc2d, BRF_GRA | CPS1_TILES },
+	{ "cd-4m.6a",      0x080000, 0x637ff38f, BRF_GRA | CPS1_TILES },
+	{ "cd-5m.7a",      0x080000, 0x470befee, BRF_GRA | CPS1_TILES },
+	{ "cd-7m.9a",      0x080000, 0x22bfb7a3, BRF_GRA | CPS1_TILES },
+	{ "cd-6m.8a",      0x080000, 0xe7599ac4, BRF_GRA | CPS1_TILES },
+	{ "cd-8m.10a",     0x080000, 0x211b4b15, BRF_GRA | CPS1_TILES },
+
+	{ "cd_q.5k",       0x020000, 0x605fdb0b, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "cd-q1.1k",      0x080000, 0x60927775, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q2.2k",      0x080000, 0x770f4c47, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q3.3k",      0x080000, 0x2f273ffc, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q4.4k",      0x080000, 0x2c67821d, BRF_SND | CPS1_QSOUND_SAMPLES },
+};
+
+STD_ROM_PICK(dinoqwb)
+STD_ROM_FN(dinoqwb)
+
+struct BurnDriver BurnDrvCpsdinoqwb = {
+	"dinoqwb", "dino", NULL, NULL, "1993",
+	"Cadillacs & Dinosaurs (King of Gunners 20190519)\0", NULL, "hack", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, dinoqwbRomInfo, dinoqwbRomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
 	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
