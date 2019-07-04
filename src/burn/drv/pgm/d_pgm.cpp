@@ -5860,6 +5860,8 @@ struct BurnDriver BurnDrvEspgalbl = {
 	224, 448, 3, 4
 };
 
+/*********** Extra Hacks ***************/
+
 //kovplus
 
 // FBA4DROID 三国战纪 正宗1V8 Knights of Valour - Sangoku Senki (1VS8 20170218)

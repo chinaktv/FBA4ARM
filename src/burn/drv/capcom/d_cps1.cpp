@@ -22453,6 +22453,10 @@ struct BurnDriverX BurnDrvCpsSfzhch = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
+/***********************/
+/*    Extra Hacks      */
+/***********************/
+
 // FBA4DROID 三国志2 达人版	Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190415)
 static struct BurnRomInfo WofdrRomDesc[] = {
 	{ "wofjdr.bin",    0x200000, 0x8cdfb6f5, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
