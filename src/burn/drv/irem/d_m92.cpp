@@ -3950,6 +3950,9 @@ struct BurnDriver BurnDrvSkingame2 = {
 	320, 240, 4, 3
 };
 
+/******************EXTRA HACKS ***************/
+
+
 // GOTVG 铁钩船长 1V4 Hook (1VS4 20160625)
 // Based on Japanese version. hooks01 in HBMAME.
 static struct BurnRomInfo hookj1v4RomDesc[] = {
