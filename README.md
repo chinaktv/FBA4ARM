@@ -92,3 +92,4 @@ There are several things to know :
 * It is only running at playable speed on x86_64 (other arch will basically need a cpu at 4Ghz because they lack a mips3 dynarec), and the core needs to be built like this to enable this dynarec : `make -j5 -f makefile.libretro USE_X64_DRC=1`
 * If your rom is at `[rom_dir]/kinst.zip`, you'll need the uncompressed disc image at `[rom_dir]/kinst/kinst.img`
 * To get the uncompressed disc image, you'll need to use the chdman tool from MAME on the chd from mame, the command looks like this : `chdman extracthd -i kinst.chd -o kinst.img`
+
