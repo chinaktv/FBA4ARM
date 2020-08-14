@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/libretro/fbalpha.svg?branch=master)](https://travis-ci.org/libretro/fbalpha)
 
-# FBAlpha-libretro
+# FBAlpha-libretro-2018
 https://www.fbalpha.com
 
 This is a fork of the official repository of the FB Alpha Emulator.
